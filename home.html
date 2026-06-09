@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HR Service Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    min-height:100vh;
+    background:#f8fafc;
+}
+
+/* ================= SIDEBAR (LIGHT MODE FIX) ================= */
+
+.sidebar{
+    width:260px;
+    padding:20px;
+
+    background:linear-gradient(
+        180deg,
+        #eff6ff,
+        #f0fdf4
+    );
+
+    border-right:1px solid #e2e8f0;
+
+    color:#0f172a;
+}
+
+.sidebar h2{
+    font-size:18px;
+    margin-bottom:25px;
+
+    color:#2563eb;
+    font-weight:700;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.menu a{
+    color:#334155;
+    text-decoration:none;
+    padding:11px 12px;
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    display:flex;
+    gap:10px;
+    align-items:center;
+
+    transition:.25s;
+}
+
+.menu a:hover{
+    background:#dbeafe;
+    color:#2563eb;
+    transform:translateX(4px);
+}
+/* ================= MAIN ================= */
+
+.main{
+    flex:1;
+    padding:30px;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(135deg,#2563eb,#10b981);
+    color:white;
+    padding:30px;
+    border-radius:18px;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:26px;
+}
+
+.hero p{
+    font-size:14px;
+    opacity:.9;
+    margin-top:6px;
+}
+
+/* SEARCH */
+.search{
+    margin-bottom:25px;
+}
+
+.search input{
+    width:100%;
+    padding:14px 16px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:10px;
+    border:4px solid #e0f2fe;
+}
+
+.card h3{
+    font-size:16px;
+    color:#0f172a;
+}
+
+.role{
+    font-size:13px;
+    color:#64748b;
+    margin-bottom:10px;
+}
+
+/* BADGES VERTICAL */
+.badges{
+    margin-top:12px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.badges span{
+    display:block;
+    width:100%;
+    padding:10px 12px;
+
+    border-radius:10px;
+
+    background:#dbeafe;
+    color:#2563eb;
+
+    font-size:12px;
+    text-align:center;
+    font-weight:500;
+}
+
+/* TOP BAR */
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.logout{
+    padding:8px 14px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#ef4444;
+    color:white;
+    font-size:13px;
+}
+
+.logout:hover{
+    background:#dc2626;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .sidebar{
+        display:none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>HR Services Plant</h2>
+
+    <div class="menu">
+        <a href="#"><i class="fa-solid fa-house"></i> Dashboard</a>
+        <a href="#"><i class="fa-solid fa-id-card"></i> ID Card</a>
+        <a href="#"><i class="fa-solid fa-notes-medical"></i> BPJS</a>
+        <a href="#"><i class="fa-solid fa-file"></i> Surat Keterangan Kerja</a>
+        <a href="#"><i class="fa-solid fa-shirt"></i> Seragam</a>
+        <a href="#"><i class="fa-solid fa-calendar"></i> Cuti</a>
+    </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <div class="topbar">
+        <h3>HR Service Portal</h3>
+
+        <button class="logout" onclick="location.href='index.html'">
+            Logout
+        </button>
+    </div>
+
+    <div class="hero">
+        <h1>Selamat Datang 👋</h1>
+        <p>
+            Portal layanan HR untuk informasi PIC, administrasi karyawan,
+            BPJS, cuti, dan kebutuhan lainnya.
+        </p>
+    </div>
+
+    <div class="search">
+        <input type="text" placeholder="Cari PIC atau layanan HR...">
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="farras.png">
+            <h3>Farras Septianto</h3>
+            <div class="role">HR Services</div>
+
+            <div class="badges">
+                <span>Pemberkasan HL</span>
+                <span>Surat Keterangan kerja (SKK)</span>
+                <span>Benefit</span>
+                <span>ID Card & Acces lock</span>
+                <span>Pelaporan kecelakaan kerja (All personel Plant)</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="suci.png">
+            <h3>Suci Rosita</h3>
+            <div class="role">HR Services</div>
+
+            <div class="badges">
+                <span>Slip Gaji</span>
+                <span>Cuti</span>
+                <span>Presensi</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="umu.png">
+            <h3>Umu Kulsum</h3>
+            <div class="role">HR Services</div>
+
+            <div class="badges">
+                <span>BPJS</span>
+                <span>Seragam</span>
+                <span>Medical</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="uul.png">
+            <h3>Uul Maria Ulfah</h3>
+            <div class="role">HR Service</div>
+
+            <div class="badges">
+                <span>PKWT</span>
+                <span>Database</span>
+                <span>Paklaring</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="yuni.png">
+            <h3>Yuni Sarah</h3>
+            <div class="role">HR Service</div>
+
+            <div class="badges">
+                <span>PMBT</span>
+                <span>Gaji Tukang</span>
+                <span>PKL</span>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

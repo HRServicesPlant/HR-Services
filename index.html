@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HR Services Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eff6ff,
+        #f8fafc,
+        #ecfdf5
+    );
+}
+
+/* =========================
+   ANIMATED BLOBS
+========================= */
+
+.blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.35;
+    z-index:0;
+}
+
+.blob1{
+    width:350px;
+    height:350px;
+    background:#3b82f6;
+    top:-100px;
+    left:-100px;
+    animation:float1 12s ease-in-out infinite;
+}
+
+.blob2{
+    width:300px;
+    height:300px;
+    background:#10b981;
+    bottom:-80px;
+    right:-80px;
+    animation:float2 15s ease-in-out infinite;
+}
+
+.blob3{
+    width:220px;
+    height:220px;
+    background:#60a5fa;
+    top:50%;
+    right:20%;
+    animation:float3 10s ease-in-out infinite;
+}
+
+@keyframes float1{
+    0%,100%{
+        transform:translate(0,0);
+    }
+    50%{
+        transform:translate(100px,60px);
+    }
+}
+
+@keyframes float2{
+    0%,100%{
+        transform:translate(0,0);
+    }
+    50%{
+        transform:translate(-80px,-70px);
+    }
+}
+
+@keyframes float3{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-80px);
+    }
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles span{
+    position:absolute;
+    width:6px;
+    height:6px;
+    background:white;
+    border-radius:50%;
+    opacity:.5;
+    animation:particle 12s linear infinite;
+}
+
+.particles span:nth-child(1){
+    left:10%;
+    animation-delay:0s;
+}
+.particles span:nth-child(2){
+    left:30%;
+    animation-delay:2s;
+}
+.particles span:nth-child(3){
+    left:50%;
+    animation-delay:4s;
+}
+.particles span:nth-child(4){
+    left:70%;
+    animation-delay:6s;
+}
+.particles span:nth-child(5){
+    left:90%;
+    animation-delay:8s;
+}
+
+@keyframes particle{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    20%{
+        opacity:.7;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+    width:420px;
+    padding:40px;
+    position:relative;
+    z-index:10;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+    0 20px 50px rgba(15,23,42,.08);
+
+    animation:cardFloat 5s ease-in-out infinite;
+}
+
+@keyframes cardFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.badge{
+    width:max-content;
+    margin:0 auto 22px;
+
+    padding:10px 24px;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #10b981
+    );
+
+    color:white;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+h1{
+    text-align:center;
+    color:#0f172a;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#64748b;
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:28px;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group{
+    position:relative;
+    margin-bottom:18px;
+}
+
+.input-group i{
+    position:absolute;
+    left:16px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#64748b;
+}
+
+.input-group input{
+    width:100%;
+    padding:15px 15px 15px 48px;
+
+    border:none;
+    outline:none;
+
+    border-radius:14px;
+    background:white;
+
+    box-shadow:
+    inset 0 0 0 1px #dbe2ea;
+
+    transition:.3s;
+}
+
+.input-group input:focus{
+    box-shadow:
+    inset 0 0 0 2px #2563eb;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.login-btn{
+    width:100%;
+    padding:15px;
+
+    border:none;
+    border-radius:14px;
+
+    color:white;
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        270deg,
+        #2563eb,
+        #10b981,
+        #2563eb
+    );
+
+    background-size:300% 300%;
+
+    animation:gradientMove 6s ease infinite;
+
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+}
+
+@keyframes gradientMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.footer{
+    margin-top:20px;
+    text-align:center;
+    color:#64748b;
+    font-size:12px;
+}
+
+@media(max-width:480px){
+
+    .card{
+        width:90%;
+        padding:30px;
+    }
+
+    h1{
+        font-size:26px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+
+<div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="card">
+
+    <div class="badge">
+        SECURE PORTAL
+    </div>
+
+    <h1>HR Services</h1>
+
+    <div class="subtitle">
+        Silakan masuk menggunakan akun yang telah terdaftar untuk mengakses layanan dan informasi karyawan.
+    </div>
+
+    <form>
+
+        <div class="input-group">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" placeholder="Username atau Email">
+        </div>
+
+        <div class="input-group">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Password">
+        </div>
+
+	<button type="button" class="login-btn" onclick="login()">
+   	 <i class="fa-solid fa-right-to-bracket"></i>
+   	 Login
+	</button>
+
+	<script>
+		async function login() {
+   			 const username = document.querySelector('input[type="text"]').value.trim();
+   			 const password = document.querySelector('input[type="password"]').value.trim();
+
+ 	        try {
+       			 const response = await fetch('users.json');
+       			 const users = await response.json();
+
+        		const user = users.find(u =>
+            u.Email.toLowerCase() === username.toLowerCase() &&
+            String(u.Password).padStart(6, '0') === password
+       	 );
+
+        if (user) {
+            localStorage.setItem('userName', user.Nama);
+            localStorage.setItem('userEmail', user.Email);
+
+            window.location.href = 'home.html';
+        } else {
+            alert('Email atau password salah!');
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert('Gagal membaca data user!');
+    }
+}
+</script>
+
+    </form>
+
+    <div class="footer">
+        © 2026 HR Services
+    </div>
+
+</div>
+
+</body>
+</html>
