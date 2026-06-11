@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HR Services Login</title>
+<title>HR Login</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
+/* RESET */
 *{
     margin:0;
     padding:0;
@@ -19,16 +20,17 @@
 }
 
 body{
-    min-height:100vh;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     overflow:hidden;
-    background:linear-gradient(135deg,#dbeafe,#ecfeff,#dcfce7);
+
+    background: linear-gradient(135deg,#dbeafe,#ecfeff,#dcfce7);
     position:relative;
 }
 
-/* ================= BACKGROUND ================= */
+/* ===== BACKGROUND ===== */
 
 .blob{
     position:absolute;
@@ -38,83 +40,59 @@ body{
 }
 
 .blob1{
-    width:400px;
-    height:400px;
+    width:420px;
+    height:420px;
     background:#2563eb;
     top:-120px;
     left:-120px;
-    animation:move1 14s infinite ease-in-out;
+    animation:move1 15s infinite ease-in-out;
 }
 
 .blob2{
-    width:350px;
-    height:350px;
+    width:380px;
+    height:380px;
     background:#10b981;
     bottom:-120px;
     right:-120px;
-    animation:move2 16s infinite ease-in-out;
+    animation:move2 18s infinite ease-in-out;
 }
 
 .blob3{
-    width:250px;
-    height:250px;
+    width:260px;
+    height:260px;
     background:#38bdf8;
-    top:50%;
+    top:55%;
     left:60%;
     animation:move3 12s infinite ease-in-out;
 }
 
 @keyframes move1{50%{transform:translate(120px,80px);}}
-@keyframes move2{50%{transform:translate(-100px,-80px);}}
+@keyframes move2{50%{transform:translate(-120px,-80px);}}
 @keyframes move3{50%{transform:translate(-80px,-120px);}}
 
-/* ================= PARTICLE ================= */
-
-.particle{
-    position:absolute;
-    width:6px;
-    height:6px;
-    background:white;
-    border-radius:50%;
-    opacity:.7;
-    animation:float 14s linear infinite;
-}
-
-.particle:nth-child(1){left:10%;animation-delay:0s;}
-.particle:nth-child(2){left:30%;animation-delay:2s;}
-.particle:nth-child(3){left:50%;animation-delay:4s;}
-.particle:nth-child(4){left:70%;animation-delay:6s;}
-.particle:nth-child(5){left:90%;animation-delay:8s;}
-
-@keyframes float{
-    from{transform:translateY(110vh);opacity:0;}
-    20%{opacity:.8;}
-    to{transform:translateY(-120px);opacity:0;}
-}
-
-/* ================= CARD ================= */
+/* ===== CARD ===== */
 
 .card{
-    width:450px;
-    padding:40px;
+    width:420px;
+    padding:35px;
 
-    background:rgba(255,255,255,.65);
+    background:rgba(255,255,255,.7);
     backdrop-filter:blur(20px);
 
     border-radius:28px;
-    border:1px solid rgba(255,255,255,.7);
+    border:1px solid rgba(255,255,255,.8);
 
-    box-shadow:0 20px 60px rgba(0,0,0,.08);
+    box-shadow:0 20px 60px rgba(0,0,0,.1);
 
-    z-index:10;
     position:relative;
+    z-index:10;
 }
 
 /* LOGO */
 
 .logo{
-    width:85px;
-    height:85px;
+    width:80px;
+    height:80px;
     margin:auto;
 
     display:flex;
@@ -126,9 +104,7 @@ body{
     background:linear-gradient(135deg,#2563eb,#10b981);
 
     color:white;
-    font-size:34px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    font-size:30px;
 
     margin-bottom:20px;
 }
@@ -137,14 +113,14 @@ body{
 
 h1{
     text-align:center;
-    font-size:34px;
+    font-size:32px;
     color:#0f172a;
 }
 
 .subtitle{
     text-align:center;
     color:#64748b;
-    font-size:14px;
+    font-size:13px;
     margin:10px 0 25px;
     line-height:1.6;
 }
@@ -153,7 +129,7 @@ h1{
 
 .input-group{
     position:relative;
-    margin-bottom:18px;
+    margin-bottom:15px;
 }
 
 .input-group i{
@@ -167,17 +143,17 @@ h1{
 .input-group input{
     width:100%;
     height:55px;
+
     border:none;
     outline:none;
-    border-radius:14px;
-    padding-left:45px;
-    font-size:15px;
-    background:white;
-    transition:.2s;
-}
 
-.input-group input:focus{
-    box-shadow:0 0 0 3px rgba(37,99,235,.2);
+    border-radius:14px;
+
+    padding-left:45px;
+
+    font-size:15px;
+
+    background:white;
 }
 
 /* BUTTON */
@@ -185,6 +161,7 @@ h1{
 .login-btn{
     width:100%;
     height:55px;
+
     border:none;
     border-radius:14px;
 
@@ -207,16 +184,7 @@ h1{
 }
 
 .login-btn:hover{
-    transform:translateY(-2px);
-}
-
-/* FOOTER */
-
-.footer{
-    margin-top:18px;
-    text-align:center;
-    color:#64748b;
-    font-size:12px;
+    transform:translateY(-3px);
 }
 
 </style>
@@ -229,12 +197,6 @@ h1{
 <div class="blob blob2"></div>
 <div class="blob blob3"></div>
 
-<div class="particle"></div>
-<div class="particle"></div>
-<div class="particle"></div>
-<div class="particle"></div>
-<div class="particle"></div>
-
 <!-- CARD -->
 <div class="card">
 
@@ -245,12 +207,12 @@ h1{
     <h1>HR SERVICES</h1>
 
     <div class="subtitle">
-        Login menggunakan akun yang sudah terdaftar
+        Login menggunakan akun terdaftar
     </div>
 
     <div class="input-group">
         <i class="fa-solid fa-user"></i>
-        <input type="text" placeholder="Email / Username">
+        <input type="text" placeholder="Email">
     </div>
 
     <div class="input-group">
@@ -259,42 +221,29 @@ h1{
     </div>
 
     <button class="login-btn" onclick="login()">
-        Login
+        LOGIN
     </button>
-
-    <div class="footer">
-        © 2026 HR Services
-    </div>
 
 </div>
 
 <script>
 async function login(){
 
-    const username = document.querySelector('input[type="text"]').value.trim();
+    const email = document.querySelector('input[type="text"]').value.trim();
     const password = document.querySelector('input[type="password"]').value.trim();
 
-    if(!username || !password){
+    if(!email || !password){
         alert("Isi semua field!");
         return;
     }
 
-    const btn = document.querySelector('.login-btn');
-    btn.disabled = true;
-    btn.innerHTML = "Loading...";
-
     try{
 
         const res = await fetch('csvjson.json');
-
-        if(!res.ok){
-            throw new Error("File JSON tidak ditemukan");
-        }
-
         const users = await res.json();
 
         const user = users.find(u =>
-            String(u.Email).toLowerCase().trim() === username.toLowerCase().trim()
+            String(u.Email).toLowerCase().trim() === email.toLowerCase().trim()
             &&
             String(u.Password).trim() === password.trim()
         );
@@ -308,13 +257,10 @@ async function login(){
             alert("Login gagal!");
         }
 
-    }catch(err){
-        console.error(err);
-        alert("Gagal membaca csvjson.json");
+    }catch(e){
+        alert("csvjson.json tidak ditemukan / error");
+        console.log(e);
     }
-
-    btn.disabled = false;
-    btn.innerHTML = "Login";
 }
 </script>
 
