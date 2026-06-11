@@ -6,7 +6,7 @@
 
 <title>HR Services Login</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -19,7 +19,7 @@
 }
 
 body{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -29,120 +29,112 @@ body{
     background:
     linear-gradient(
         135deg,
-        #eff6ff,
-        #f8fafc,
-        #ecfdf5
+        #f8fafc 0%,
+        #eef2ff 50%,
+        #dbeafe 100%
     );
 }
 
-/* =========================
-   ANIMATED BLOBS
-========================= */
+/* ======================
+   RIBBON BACKGROUND
+====================== */
 
-.blob{
+.ribbon{
     position:absolute;
-    border-radius:50%;
-    filter:blur(90px);
-    opacity:.35;
+    border-radius:999px;
+    opacity:.45;
     z-index:0;
 }
 
-.blob1{
-    width:350px;
-    height:350px;
-    background:#3b82f6;
-    top:-100px;
-    left:-100px;
-    animation:float1 12s ease-in-out infinite;
+.ribbon1{
+    width:2200px;
+    height:70px;
+    background:#40c9ff;
+    top:30%;
+    left:-40%;
+    transform:rotate(16deg);
 }
 
-.blob2{
-    width:300px;
-    height:300px;
-    background:#10b981;
-    bottom:-80px;
-    right:-80px;
-    animation:float2 15s ease-in-out infinite;
+.ribbon2{
+    width:2200px;
+    height:70px;
+    background:#ff8acb;
+    top:45%;
+    left:-35%;
+    transform:rotate(16deg);
 }
 
-.blob3{
-    width:220px;
-    height:220px;
-    background:#60a5fa;
-    top:50%;
-    right:20%;
-    animation:float3 10s ease-in-out infinite;
+.ribbon3{
+    width:2200px;
+    height:70px;
+    background:#ffd45e;
+    top:60%;
+    left:-30%;
+    transform:rotate(16deg);
 }
 
-@keyframes float1{
-    0%,100%{
-        transform:translate(0,0);
-    }
-    50%{
-        transform:translate(100px,60px);
-    }
+.ribbon4{
+    width:1800px;
+    height:50px;
+    background:#7de3ff;
+    top:-5%;
+    left:20%;
+    transform:rotate(90deg);
+    opacity:.35;
 }
 
-@keyframes float2{
-    0%,100%{
-        transform:translate(0,0);
-    }
-    50%{
-        transform:translate(-80px,-70px);
-    }
+.ribbon5{
+    width:1800px;
+    height:50px;
+    background:#ff9fd6;
+    top:-5%;
+    left:28%;
+    transform:rotate(90deg);
+    opacity:.35;
 }
 
-@keyframes float3{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-80px);
-    }
-}
-
-/* =========================
+/* ======================
    PARTICLES
-========================= */
+====================== */
 
-.particles span{
+.particle{
     position:absolute;
-    width:6px;
-    height:6px;
-    background:white;
+    width:8px;
+    height:8px;
     border-radius:50%;
-    opacity:.5;
-    animation:particle 12s linear infinite;
+    background:white;
+    opacity:.6;
+    animation:floatParticle 12s linear infinite;
 }
 
-.particles span:nth-child(1){
+.particle:nth-child(1){
     left:10%;
     animation-delay:0s;
 }
-.particles span:nth-child(2){
+.particle:nth-child(2){
     left:30%;
     animation-delay:2s;
 }
-.particles span:nth-child(3){
+.particle:nth-child(3){
     left:50%;
     animation-delay:4s;
 }
-.particles span:nth-child(4){
+.particle:nth-child(4){
     left:70%;
     animation-delay:6s;
 }
-.particles span:nth-child(5){
+.particle:nth-child(5){
     left:90%;
     animation-delay:8s;
 }
 
-@keyframes particle{
+@keyframes floatParticle{
     from{
         transform:translateY(100vh);
         opacity:0;
     }
     20%{
-        opacity:.7;
+        opacity:.8;
     }
     to{
         transform:translateY(-100px);
@@ -150,185 +142,225 @@ body{
     }
 }
 
-/* =========================
+/* ======================
    CARD
-========================= */
+====================== */
 
 .card{
-    width:420px;
-    padding:40px;
+    width:520px;
+    padding:38px;
+
     position:relative;
     z-index:10;
 
-    border-radius:28px;
+    background:rgba(255,255,255,.78);
 
-    background:rgba(255,255,255,.75);
-    backdrop-filter:blur(18px);
+    backdrop-filter:blur(20px);
 
     border:1px solid rgba(255,255,255,.8);
 
+    border-radius:34px;
+
     box-shadow:
-    0 20px 50px rgba(15,23,42,.08);
-
-    animation:cardFloat 5s ease-in-out infinite;
+    0 20px 60px rgba(0,0,0,.08);
 }
 
-@keyframes cardFloat{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-10px);
-    }
+/* ======================
+   LOGO AREA
+====================== */
+
+.logo-box{
+    width:320px;
+    height:64px;
+
+    margin:0 auto 20px;
+
+    background:white;
+
+    border-radius:999px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.05);
+
+    font-weight:700;
+    color:#2563eb;
 }
 
-/* =========================
+/* ======================
    BADGE
-========================= */
+====================== */
 
 .badge{
     width:max-content;
-    margin:0 auto 22px;
 
-    padding:10px 24px;
+    margin:0 auto 20px;
+
+    padding:10px 25px;
 
     border-radius:999px;
 
     background:
     linear-gradient(
         90deg,
-        #2563eb,
-        #10b981
+        #3b82f6,
+        #ec4899
     );
 
     color:white;
-    font-size:12px;
-    font-weight:600;
-    letter-spacing:1px;
+
+    font-size:13px;
+    font-weight:700;
 }
 
-/* =========================
-   TEXT
-========================= */
+/* ======================
+   TITLE
+====================== */
 
 h1{
     text-align:center;
-    color:#0f172a;
-    font-size:30px;
-    margin-bottom:10px;
+
+    font-size:56px;
+    line-height:1;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .subtitle{
     text-align:center;
+
     color:#64748b;
-    font-size:14px;
-    line-height:1.6;
+
+    font-size:15px;
+
     margin-bottom:28px;
+
+    line-height:1.7;
 }
 
-/* =========================
+/* ======================
    INPUT
-========================= */
+====================== */
+
+.label{
+    margin-bottom:8px;
+    color:#0f172a;
+    font-weight:700;
+}
 
 .input-group{
     position:relative;
-    margin-bottom:18px;
+    margin-bottom:20px;
 }
 
 .input-group i{
     position:absolute;
-    left:16px;
+    left:18px;
     top:50%;
     transform:translateY(-50%);
-    color:#64748b;
+    color:#2563eb;
 }
 
 .input-group input{
     width:100%;
-    padding:15px 15px 15px 48px;
+    height:62px;
 
-    border:none;
+    border-radius:18px;
+
+    border:2px solid #e5e7eb;
+
     outline:none;
 
-    border-radius:14px;
-    background:white;
+    background:rgba(255,255,255,.9);
 
-    box-shadow:
-    inset 0 0 0 1px #dbe2ea;
+    padding-left:52px;
+
+    font-size:15px;
+    font-weight:500;
 
     transition:.3s;
 }
 
 .input-group input:focus{
-    box-shadow:
-    inset 0 0 0 2px #2563eb;
+    border-color:#3b82f6;
 }
 
-/* =========================
+/* ======================
    BUTTON
-========================= */
+====================== */
 
 .login-btn{
     width:100%;
-    padding:15px;
+    height:62px;
 
     border:none;
-    border-radius:14px;
 
-    color:white;
-    font-size:15px;
-    font-weight:600;
+    border-radius:20px;
 
     cursor:pointer;
 
+    color:white;
+
+    font-size:18px;
+    font-weight:700;
+
     background:
     linear-gradient(
-        270deg,
+        90deg,
         #2563eb,
-        #10b981,
-        #2563eb
+        #60a5fa,
+        #ec4899
     );
 
-    background-size:300% 300%;
-
-    animation:gradientMove 6s ease infinite;
+    box-shadow:
+    0 15px 30px rgba(59,130,246,.25);
 
     transition:.3s;
 }
 
 .login-btn:hover{
     transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(37,99,235,.25);
 }
 
-@keyframes gradientMove{
-    0%{
-        background-position:0% 50%;
-    }
-    50%{
-        background-position:100% 50%;
-    }
-    100%{
-        background-position:0% 50%;
-    }
-}
+/* ======================
+   FOOTER
+====================== */
 
 .footer{
-    margin-top:20px;
     text-align:center;
+    margin-top:20px;
     color:#64748b;
-    font-size:12px;
+    font-size:13px;
 }
 
-@media(max-width:480px){
+@media(max-width:600px){
 
     .card{
-        width:90%;
-        padding:30px;
+        width:92%;
+        padding:25px;
     }
 
     h1{
-        font-size:26px;
+        font-size:42px;
+    }
+
+    .logo-box{
+        width:100%;
     }
 }
 
@@ -337,76 +369,55 @@ h1{
 
 <body>
 
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
+<div class="ribbon ribbon1"></div>
+<div class="ribbon ribbon2"></div>
+<div class="ribbon ribbon3"></div>
+<div class="ribbon ribbon4"></div>
+<div class="ribbon ribbon5"></div>
 
-<div class="particles">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
 
 <div class="card">
 
-    <div class="badge">
-        SECURE PORTAL
+    <div class="logo-box">
+        HR SERVICES PORTAL
     </div>
 
-    <h1>HR Services</h1>
+    <div class="badge">
+        <i class="fa-solid fa-lock"></i>
+        SECURE ACCESS
+    </div>
+
+    <h1>HR LOGIN</h1>
 
     <div class="subtitle">
-        Silakan masuk menggunakan akun yang telah terdaftar untuk mengakses layanan dan informasi karyawan.
+        Masuk menggunakan username atau email yang sudah terdaftar untuk mengakses layanan dan informasi karyawan.
     </div>
 
     <form>
 
+        <div class="label">Username / Email</div>
+
         <div class="input-group">
             <i class="fa-solid fa-user"></i>
-            <input type="text" placeholder="Username atau Email">
+            <input type="text" placeholder="Masukkan username atau email">
         </div>
+
+        <div class="label">Password</div>
 
         <div class="input-group">
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" placeholder="Password">
+            <i class="fa-solid fa-key"></i>
+            <input type="password" placeholder="Masukkan password">
         </div>
 
-	<button type="button" class="login-btn" onclick="login()">
-   	 <i class="fa-solid fa-right-to-bracket"></i>
-   	 Login
-	</button>
-
-	<script>
-		async function login() {
-   			 const username = document.querySelector('input[type="text"]').value.trim();
-   			 const password = document.querySelector('input[type="password"]').value.trim();
-
- 	        try {
-       			 const response = await fetch('csvjson.json');
-       			 const users = await response.json();
-
-        		const user = users.find(u =>
-            u.Email.toLowerCase() === username.toLowerCase() &&
-            String(u.Password).padStart(6, '0') === password
-       	 );
-
-        if (user) {
-            localStorage.setItem('userName', user.Nama);
-            localStorage.setItem('userEmail', user.Email);
-
-            window.location.href = 'home.html';
-        } else {
-            alert('Email atau password salah!');
-        }
-
-    } catch (error) {
-        console.error(error);
-        alert('Gagal membaca data user!');
-    }
-}
-</script>
+        <button type="button" class="login-btn" onclick="login()">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            Masuk
+        </button>
 
     </form>
 
@@ -415,6 +426,44 @@ h1{
     </div>
 
 </div>
+
+<script>
+async function login() {
+
+    const username = document.querySelector('input[type="text"]').value.trim();
+    const password = document.querySelector('input[type="password"]').value.trim();
+
+    try {
+
+        const response = await fetch('csvjson.json');
+        const users = await response.json();
+
+        const user = users.find(u =>
+            u.Email.toLowerCase() === username.toLowerCase() &&
+            String(u.Password).padStart(6,'0') === password
+        );
+
+        if(user){
+
+            localStorage.setItem('userName', user.Nama);
+            localStorage.setItem('userEmail', user.Email);
+
+            window.location.href='home.html';
+
+        }else{
+
+            alert('Email atau password salah!');
+
+        }
+
+    } catch(error){
+
+        console.error(error);
+        alert('Gagal membaca data user!');
+
+    }
+}
+</script>
 
 </body>
 </html>
