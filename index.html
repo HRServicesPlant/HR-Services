@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>HR Services Login</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-
 *{
     margin:0;
     padding:0;
@@ -29,216 +16,287 @@ body{
     background:
     linear-gradient(
         135deg,
-        #f8fafc 0%,
-        #eef2ff 50%,
-        #dbeafe 100%
+        #dbeafe 0%,
+        #ecfeff 45%,
+        #dcfce7 100%
     );
 }
 
-/* ======================
-   RIBBON BACKGROUND
-====================== */
+/* =====================
+   BACKGROUND GLOW
+===================== */
 
-.ribbon{
+.bg{
     position:absolute;
-    border-radius:999px;
-    opacity:.45;
-    z-index:0;
+    inset:0;
+    overflow:hidden;
 }
 
-.ribbon1{
-    width:2200px;
-    height:70px;
-    background:#40c9ff;
-    top:30%;
-    left:-40%;
-    transform:rotate(16deg);
+.blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.5;
 }
 
-.ribbon2{
-    width:2200px;
-    height:70px;
-    background:#ff8acb;
-    top:45%;
-    left:-35%;
-    transform:rotate(16deg);
+.blob1{
+    width:450px;
+    height:450px;
+    background:#2563eb;
+    top:-150px;
+    left:-100px;
+
+    animation:move1 15s ease-in-out infinite;
 }
 
-.ribbon3{
-    width:2200px;
-    height:70px;
-    background:#ffd45e;
-    top:60%;
-    left:-30%;
-    transform:rotate(16deg);
+.blob2{
+    width:400px;
+    height:400px;
+    background:#10b981;
+    bottom:-120px;
+    right:-100px;
+
+    animation:move2 18s ease-in-out infinite;
 }
 
-.ribbon4{
-    width:1800px;
-    height:50px;
-    background:#7de3ff;
-    top:-5%;
-    left:20%;
-    transform:rotate(90deg);
-    opacity:.35;
+.blob3{
+    width:250px;
+    height:250px;
+    background:#38bdf8;
+    top:50%;
+    left:60%;
+
+    animation:move3 12s ease-in-out infinite;
 }
 
-.ribbon5{
-    width:1800px;
-    height:50px;
-    background:#ff9fd6;
-    top:-5%;
-    left:28%;
-    transform:rotate(90deg);
-    opacity:.35;
+@keyframes move1{
+    50%{
+        transform:translate(120px,80px);
+    }
 }
 
-/* ======================
+@keyframes move2{
+    50%{
+        transform:translate(-120px,-80px);
+    }
+}
+
+@keyframes move3{
+    50%{
+        transform:translate(-80px,-120px);
+    }
+}
+
+/* =====================
+   FLOATING CIRCLES
+===================== */
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.4);
+}
+
+.c1{
+    width:500px;
+    height:500px;
+    top:-200px;
+    right:-150px;
+
+    animation:spin 30s linear infinite;
+}
+
+.c2{
+    width:700px;
+    height:700px;
+    bottom:-350px;
+    left:-250px;
+
+    animation:spin 45s linear infinite reverse;
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* =====================
    PARTICLES
-====================== */
+===================== */
 
 .particle{
     position:absolute;
-    width:8px;
-    height:8px;
-    border-radius:50%;
+    width:6px;
+    height:6px;
     background:white;
-    opacity:.6;
-    animation:floatParticle 12s linear infinite;
+    border-radius:50%;
+    opacity:.7;
 }
 
 .particle:nth-child(1){
     left:10%;
-    animation-delay:0s;
-}
-.particle:nth-child(2){
-    left:30%;
-    animation-delay:2s;
-}
-.particle:nth-child(3){
-    left:50%;
-    animation-delay:4s;
-}
-.particle:nth-child(4){
-    left:70%;
-    animation-delay:6s;
-}
-.particle:nth-child(5){
-    left:90%;
-    animation-delay:8s;
+    animation:float 12s linear infinite;
 }
 
-@keyframes floatParticle{
+.particle:nth-child(2){
+    left:30%;
+    animation:float 15s linear infinite 2s;
+}
+
+.particle:nth-child(3){
+    left:50%;
+    animation:float 10s linear infinite 3s;
+}
+
+.particle:nth-child(4){
+    left:70%;
+    animation:float 18s linear infinite 1s;
+}
+
+.particle:nth-child(5){
+    left:90%;
+    animation:float 14s linear infinite 5s;
+}
+
+@keyframes float{
     from{
-        transform:translateY(100vh);
+        transform:translateY(110vh);
         opacity:0;
     }
+
     20%{
         opacity:.8;
     }
+
     to{
-        transform:translateY(-100px);
+        transform:translateY(-120px);
         opacity:0;
     }
 }
 
-/* ======================
+/* =====================
    CARD
-====================== */
+===================== */
 
 .card{
-    width:520px;
-    padding:38px;
+    width:460px;
+    padding:40px;
 
     position:relative;
     z-index:10;
 
-    background:rgba(255,255,255,.78);
+    background:rgba(255,255,255,.65);
 
     backdrop-filter:blur(20px);
 
-    border:1px solid rgba(255,255,255,.8);
+    border-radius:30px;
 
-    border-radius:34px;
+    border:1px solid rgba(255,255,255,.8);
 
     box-shadow:
     0 20px 60px rgba(0,0,0,.08);
+
+    overflow:hidden;
 }
 
-/* ======================
-   LOGO AREA
-====================== */
+/* border glow */
 
-.logo-box{
-    width:320px;
-    height:64px;
+.card::before{
+    content:'';
 
-    margin:0 auto 20px;
-
-    background:white;
-
-    border-radius:999px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    box-shadow:
-    0 5px 15px rgba(0,0,0,.05);
-
-    font-weight:700;
-    color:#2563eb;
-}
-
-/* ======================
-   BADGE
-====================== */
-
-.badge{
-    width:max-content;
-
-    margin:0 auto 20px;
-
-    padding:10px 25px;
-
-    border-radius:999px;
-
-    background:
-    linear-gradient(
-        90deg,
-        #3b82f6,
-        #ec4899
-    );
-
-    color:white;
-
-    font-size:13px;
-    font-weight:700;
-}
-
-/* ======================
-   TITLE
-====================== */
-
-h1{
-    text-align:center;
-
-    font-size:56px;
-    line-height:1;
-
-    font-weight:800;
-
-    margin-bottom:15px;
+    position:absolute;
+    inset:-2px;
 
     background:
     linear-gradient(
         90deg,
         #2563eb,
-        #1d4ed8
+        #10b981,
+        #2563eb
     );
 
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    background-size:300%;
+
+    animation:borderMove 8s linear infinite;
+
+    z-index:-1;
+
+    border-radius:32px;
+}
+
+.card::after{
+    content:'';
+
+    position:absolute;
+    inset:2px;
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:28px;
+
+    z-index:-1;
+}
+
+@keyframes borderMove{
+    from{
+        background-position:0%;
+    }
+    to{
+        background-position:300%;
+    }
+}
+
+/* =====================
+   LOGO
+===================== */
+
+.logo{
+    width:80px;
+    height:80px;
+
+    margin:auto;
+
+    border-radius:24px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #10b981
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    font-size:30px;
+
+    box-shadow:
+    0 15px 35px rgba(37,99,235,.25);
+
+    margin-bottom:20px;
+}
+
+/* =====================
+   TEXT
+===================== */
+
+h1{
+    text-align:center;
+
+    font-size:34px;
+    font-weight:700;
+
+    color:#0f172a;
+
+    margin-bottom:10px;
 }
 
 .subtitle{
@@ -246,89 +304,85 @@ h1{
 
     color:#64748b;
 
-    font-size:15px;
-
-    margin-bottom:28px;
-
     line-height:1.7;
+
+    margin-bottom:25px;
 }
 
-/* ======================
+/* =====================
    INPUT
-====================== */
-
-.label{
-    margin-bottom:8px;
-    color:#0f172a;
-    font-weight:700;
-}
+===================== */
 
 .input-group{
     position:relative;
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .input-group i{
     position:absolute;
+
     left:18px;
     top:50%;
+
     transform:translateY(-50%);
+
     color:#2563eb;
 }
 
 .input-group input{
     width:100%;
-    height:62px;
+    height:60px;
 
-    border-radius:18px;
-
-    border:2px solid #e5e7eb;
+    border:none;
 
     outline:none;
 
-    background:rgba(255,255,255,.9);
+    border-radius:16px;
 
-    padding-left:52px;
+    padding-left:50px;
+
+    background:white;
 
     font-size:15px;
-    font-weight:500;
 
     transition:.3s;
 }
 
 .input-group input:focus{
-    border-color:#3b82f6;
+    box-shadow:
+    0 0 0 3px rgba(37,99,235,.15);
 }
 
-/* ======================
+/* =====================
    BUTTON
-====================== */
+===================== */
 
 .login-btn{
     width:100%;
-    height:62px;
+    height:60px;
 
     border:none;
 
-    border-radius:20px;
-
-    cursor:pointer;
+    border-radius:16px;
 
     color:white;
 
-    font-size:18px;
-    font-weight:700;
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
 
     background:
     linear-gradient(
-        90deg,
+        270deg,
         #2563eb,
-        #60a5fa,
-        #ec4899
+        #10b981,
+        #2563eb
     );
 
-    box-shadow:
-    0 15px 30px rgba(59,130,246,.25);
+    background-size:300%;
+
+    animation:btnMove 6s ease infinite;
 
     transition:.3s;
 }
@@ -337,133 +391,26 @@ h1{
     transform:translateY(-3px);
 }
 
-/* ======================
-   FOOTER
-====================== */
+@keyframes btnMove{
+    0%{
+        background-position:0%;
+    }
+
+    50%{
+        background-position:100%;
+    }
+
+    100%{
+        background-position:0%;
+    }
+}
 
 .footer{
-    text-align:center;
     margin-top:20px;
+
+    text-align:center;
+
     color:#64748b;
-    font-size:13px;
+
+    font-size:12px;
 }
-
-@media(max-width:600px){
-
-    .card{
-        width:92%;
-        padding:25px;
-    }
-
-    h1{
-        font-size:42px;
-    }
-
-    .logo-box{
-        width:100%;
-    }
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="ribbon ribbon1"></div>
-<div class="ribbon ribbon2"></div>
-<div class="ribbon ribbon3"></div>
-<div class="ribbon ribbon4"></div>
-<div class="ribbon ribbon5"></div>
-
-<div class="particle"></div>
-<div class="particle"></div>
-<div class="particle"></div>
-<div class="particle"></div>
-<div class="particle"></div>
-
-<div class="card">
-
-    <div class="logo-box">
-        HR SERVICES PORTAL
-    </div>
-
-    <div class="badge">
-        <i class="fa-solid fa-lock"></i>
-        SECURE ACCESS
-    </div>
-
-    <h1>HR LOGIN</h1>
-
-    <div class="subtitle">
-        Masuk menggunakan username atau email yang sudah terdaftar untuk mengakses layanan dan informasi karyawan.
-    </div>
-
-    <form>
-
-        <div class="label">Username / Email</div>
-
-        <div class="input-group">
-            <i class="fa-solid fa-user"></i>
-            <input type="text" placeholder="Masukkan username atau email">
-        </div>
-
-        <div class="label">Password</div>
-
-        <div class="input-group">
-            <i class="fa-solid fa-key"></i>
-            <input type="password" placeholder="Masukkan password">
-        </div>
-
-        <button type="button" class="login-btn" onclick="login()">
-            <i class="fa-solid fa-right-to-bracket"></i>
-            Masuk
-        </button>
-
-    </form>
-
-    <div class="footer">
-        © 2026 HR Services
-    </div>
-
-</div>
-
-<script>
-async function login() {
-
-    const username = document.querySelector('input[type="text"]').value.trim();
-    const password = document.querySelector('input[type="password"]').value.trim();
-
-    try {
-
-        const response = await fetch('csvjson.json');
-        const users = await response.json();
-
-        const user = users.find(u =>
-            u.Email.toLowerCase() === username.toLowerCase() &&
-            String(u.Password).padStart(6,'0') === password
-        );
-
-        if(user){
-
-            localStorage.setItem('userName', user.Nama);
-            localStorage.setItem('userEmail', user.Email);
-
-            window.location.href='home.html';
-
-        }else{
-
-            alert('Email atau password salah!');
-
-        }
-
-    } catch(error){
-
-        console.error(error);
-        alert('Gagal membaca data user!');
-
-    }
-}
-</script>
-
-</body>
-</html>
