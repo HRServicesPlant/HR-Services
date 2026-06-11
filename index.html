@@ -11,6 +11,7 @@
 
 <style>
 
+/* ================= GLOBAL ================= */
 *{
     margin:0;
     padding:0;
@@ -24,54 +25,40 @@ body{
     justify-content:center;
     align-items:center;
     overflow:hidden;
-    background:linear-gradient(135deg,#dbeafe,#ecfeff,#dcfce7);
+    position:relative;
+
+    /* animated gradient */
+    background: linear-gradient(-45deg,#dbeafe,#ecfeff,#dcfce7,#e0f2fe);
+    background-size:400% 400%;
+    animation:gradientMove 12s ease infinite;
 }
 
-/* ===== BACKGROUND ANIMATION ===== */
-.bg{
-    position:absolute;
-    inset:0;
-    overflow:hidden;
-    z-index:0;
+@keyframes gradientMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
-.circle{
-    position:absolute;
-    border-radius:50%;
-    background:rgba(255,255,255,.35);
-    animation:floatUp 18s linear infinite;
-}
-
-.circle:nth-child(1){left:10%;width:40px;height:40px;animation-duration:20s;}
-.circle:nth-child(2){left:25%;width:20px;height:20px;animation-duration:15s;}
-.circle:nth-child(3){left:45%;width:60px;height:60px;animation-duration:22s;}
-.circle:nth-child(4){left:70%;width:25px;height:25px;animation-duration:18s;}
-.circle:nth-child(5){left:85%;width:50px;height:50px;animation-duration:25s;}
-
-@keyframes floatUp{
-    0%{transform:translateY(0);opacity:0;}
-    20%{opacity:.7;}
-    100%{transform:translateY(-110vh);opacity:0;}
-}
-
-/* ===== CARD ===== */
+/* ================= GLASS CARD ================= */
 .card{
     width:420px;
     padding:35px;
 
-    background:rgba(255,255,255,.75);
-    backdrop-filter:blur(20px);
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(25px);
 
     border-radius:28px;
-    border:1px solid rgba(255,255,255,.8);
+    border:1px solid rgba(255,255,255,.4);
 
-    box-shadow:0 20px 60px rgba(0,0,0,.1);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.1),
+        inset 0 0 20px rgba(255,255,255,.3);
 
-    position:relative;
     z-index:10;
+    position:relative;
 }
 
-/* LOGO */
+/* ================= LOGO ================= */
 .logo{
     width:80px;
     height:80px;
@@ -81,12 +68,14 @@ body{
     justify-content:center;
     align-items:center;
 
-    border-radius:20px;
+    border-radius:22px;
 
     background:linear-gradient(135deg,#2563eb,#10b981);
 
     color:white;
     font-size:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
 
     margin-bottom:20px;
 }
@@ -94,6 +83,8 @@ body{
 /* TEXT */
 h1{
     text-align:center;
+    font-size:30px;
+    color:#0f172a;
 }
 
 .subtitle{
@@ -125,6 +116,8 @@ h1{
     border-radius:14px;
     padding-left:45px;
     font-size:15px;
+
+    background:rgba(255,255,255,.8);
 }
 
 /* BUTTON */
@@ -142,13 +135,74 @@ h1{
 
     background:linear-gradient(270deg,#2563eb,#10b981,#2563eb);
     background-size:300%;
-    animation:move 6s infinite ease;
+    animation:btnMove 6s infinite ease;
 }
 
-@keyframes move{
+@keyframes btnMove{
     0%{background-position:0%;}
     50%{background-position:100%;}
     100%{background-position:0%;}
+}
+
+/* ================= NEON BUBBLES ================= */
+.bg{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:0;
+}
+
+/* bubble base */
+.bg span{
+    position:absolute;
+    bottom:-200px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(5px);
+
+    box-shadow:
+        0 0 20px rgba(59,130,246,.4),
+        0 0 40px rgba(16,185,129,.3);
+
+    animation:floatRandom linear infinite;
+}
+
+/* different sizes */
+.bg span:nth-child(1){left:10%;width:60px;height:60px;animation-duration:18s;}
+.bg span:nth-child(2){left:20%;width:25px;height:25px;animation-duration:12s;}
+.bg span:nth-child(3){left:35%;width:80px;height:80px;animation-duration:22s;}
+.bg span:nth-child(4){left:50%;width:30px;height:30px;animation-duration:16s;}
+.bg span:nth-child(5){left:65%;width:55px;height:55px;animation-duration:20s;}
+.bg span:nth-child(6){left:80%;width:35px;height:35px;animation-duration:14s;}
+
+/* RANDOM MOVE (LEFT-RIGHT + UP) */
+@keyframes floatRandom{
+    0%{
+        transform:translate(0,0) scale(1);
+        opacity:0;
+    }
+
+    25%{
+        transform:translate(-40px,-30vh) scale(1.2);
+        opacity:.5;
+    }
+
+    50%{
+        transform:translate(40px,-60vh) scale(1);
+        opacity:.8;
+    }
+
+    75%{
+        transform:translate(-30px,-90vh) scale(1.3);
+        opacity:.4;
+    }
+
+    100%{
+        transform:translate(0,-120vh) scale(1.1);
+        opacity:0;
+    }
 }
 
 </style>
@@ -156,13 +210,14 @@ h1{
 
 <body>
 
-<!-- BACKGROUND -->
+<!-- NEON BACKGROUND -->
 <div class="bg">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
 </div>
 
 <!-- CARD -->
@@ -196,15 +251,11 @@ h1{
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
-
-    // ENTER LOGIN FIX (INI YANG BENAR 100%)
-    document.addEventListener("keydown", function(e){
-        if(e.key === "Enter"){
-            login();
-        }
-    });
-
+/* ENTER LOGIN */
+document.addEventListener("keydown", function(e){
+    if(e.key === "Enter"){
+        login();
+    }
 });
 
 async function login(){
@@ -231,7 +282,6 @@ async function login(){
         if(user){
 
             localStorage.setItem("username", user.Username);
-
             window.location.href = "home.html";
 
         }else{
