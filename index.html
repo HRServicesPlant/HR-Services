@@ -6,12 +6,12 @@
 
 <title>Login HR Services</title>
 
-<!-- FONT BARU (lebih modern dari Poppins) -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
+/* ================= GLOBAL ================= */
 *{
     margin:0;
     padding:0;
@@ -25,35 +25,45 @@ body{
     justify-content:center;
     align-items:center;
     overflow:hidden;
-    background:linear-gradient(-45deg,#dbeafe,#ecfeff,#dcfce7,#e0f2fe);
+    position:relative;
+
+    background: linear-gradient(-45deg,#dbeafe,#ecfeff,#dcfce7,#e0f2fe);
     background-size:400% 400%;
     animation:gradientMove 12s ease infinite;
 }
 
-/* background animation */
 @keyframes gradientMove{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
     100%{background-position:0% 50%;}
 }
 
-/* BUBBLES */
+/* ================= BUBBLES (JANGAN DIHAPUS) ================= */
+.bg{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:0;
+}
+
 .bg span{
     position:absolute;
-    bottom:-150px;
-    width:20px;
-    height:20px;
-    background:rgba(255,255,255,.25);
+    bottom:-200px;
     border-radius:50%;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(6px);
+    box-shadow:
+        0 0 25px rgba(59,130,246,.35),
+        0 0 40px rgba(16,185,129,.25);
     animation:float 18s linear infinite;
-    backdrop-filter:blur(5px);
 }
 
 .bg span:nth-child(1){left:10%;width:60px;height:60px;animation-duration:20s;}
-.bg span:nth-child(2){left:30%;animation-duration:14s;}
-.bg span:nth-child(3){left:50%;width:80px;height:80px;animation-duration:22s;}
-.bg span:nth-child(4){left:70%;animation-duration:16s;}
-.bg span:nth-child(5){left:85%;width:50px;height:50px;animation-duration:25s;}
+.bg span:nth-child(2){left:25%;width:25px;height:25px;animation-duration:14s;}
+.bg span:nth-child(3){left:40%;width:80px;height:80px;animation-duration:22s;}
+.bg span:nth-child(4){left:60%;width:30px;height:30px;animation-duration:16s;}
+.bg span:nth-child(5){left:75%;width:55px;height:55px;animation-duration:19s;}
+.bg span:nth-child(6){left:90%;width:35px;height:35px;animation-duration:15s;}
 
 @keyframes float{
     0%{transform:translateY(0);opacity:0;}
@@ -61,7 +71,7 @@ body{
     100%{transform:translateY(-120vh);opacity:0;}
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .card{
     width:420px;
     padding:35px;
@@ -72,30 +82,35 @@ body{
     border-radius:28px;
     border:1px solid rgba(255,255,255,.4);
 
-    box-shadow:0 20px 60px rgba(0,0,0,.1);
+    box-shadow:0 20px 60px rgba(0,0,0,.12);
 
-    position:relative;
     z-index:10;
+    position:relative;
 }
 
-/* LOGO */
+/* ================= LOGO ================= */
 .logo{
     width:80px;
     height:80px;
     margin:auto;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     border-radius:22px;
+
     background:linear-gradient(135deg,#2563eb,#10b981);
     color:white;
     font-size:28px;
-    margin-bottom:15px;
+
+    margin-bottom:18px;
 }
 
-/* TEXT */
+/* ================= TEXT ================= */
 h1{
     text-align:center;
+    font-size:28px;
     font-weight:700;
 }
 
@@ -103,10 +118,10 @@ h1{
     text-align:center;
     color:#64748b;
     font-size:13px;
-    margin-bottom:20px;
+    margin:10px 0 20px;
 }
 
-/* INPUT */
+/* ================= INPUT ================= */
 .input-group{
     position:relative;
     margin-bottom:15px;
@@ -120,6 +135,7 @@ h1{
     color:#2563eb;
 }
 
+/* input text */
 .input-group input{
     width:100%;
     height:55px;
@@ -127,11 +143,12 @@ h1{
     outline:none;
     border-radius:14px;
     padding-left:45px;
+    padding-right:45px; /* penting biar eye gak nabrak */
     font-size:15px;
     background:rgba(255,255,255,.8);
 }
 
-/* PASSWORD EYE */
+/* ================= EYE ICON (KANAN) ================= */
 .eye{
     position:absolute;
     right:15px;
@@ -141,7 +158,7 @@ h1{
     color:#64748b;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 .login-btn{
     width:100%;
     height:55px;
@@ -151,25 +168,26 @@ h1{
     font-size:16px;
     font-weight:600;
     cursor:pointer;
+
     background:linear-gradient(270deg,#2563eb,#10b981,#2563eb);
     background-size:300%;
-    animation:btn 6s infinite ease;
+    animation:btnMove 6s infinite ease;
 }
 
-@keyframes btn{
+@keyframes btnMove{
     0%{background-position:0%;}
     50%{background-position:100%;}
     100%{background-position:0%;}
 }
 
-/* SUCCESS CHECKMARK */
+/* ================= SUCCESS ================= */
 .success{
     position:fixed;
     inset:0;
     display:none;
     align-items:center;
     justify-content:center;
-    background:rgba(255,255,255,.7);
+    background:rgba(255,255,255,.6);
     backdrop-filter:blur(10px);
     z-index:999;
 }
@@ -182,7 +200,7 @@ h1{
     display:flex;
     align-items:center;
     justify-content:center;
-    animation:pop .5s ease;
+    animation:pop .4s ease;
 }
 
 .check i{
@@ -195,10 +213,10 @@ h1{
     100%{transform:scale(1);}
 }
 
-/* FADE OUT */
+/* fade */
 .fade-out{
     opacity:0;
-    transition:0.6s ease;
+    transition:.5s ease;
 }
 
 </style>
@@ -206,16 +224,24 @@ h1{
 
 <body>
 
+<!-- BUBBLE BACKGROUND (TETAP ADA) -->
 <div class="bg">
-    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
 </div>
 
+<!-- CARD -->
 <div class="card" id="card">
 
-    <div class="logo"><i class="fa-solid fa-user-lock"></i></div>
+    <div class="logo">
+        <i class="fa-solid fa-user-lock"></i>
+    </div>
 
-    <h1>LOGIN HR</h1>
-    <div class="subtitle">Masukkan username dan password</div>
+    <h1>LOGIN HR SERVICES</h1>
+
+    <div class="subtitle">
+        Masukkan username dan password
+    </div>
 
     <div class="input-group">
         <i class="fa-solid fa-user"></i>
@@ -248,8 +274,8 @@ document.addEventListener("keydown",(e)=>{
 
 /* TOGGLE PASSWORD */
 function togglePass(){
-    const pass = document.getElementById("password");
-    pass.type = pass.type === "password" ? "text" : "password";
+    const p = document.getElementById("password");
+    p.type = p.type === "password" ? "text" : "password";
 }
 
 /* LOGIN */
@@ -269,16 +295,12 @@ async function login(){
 
     if(user){
 
-        // show success animation
         document.getElementById("success").style.display="flex";
-
-        // fade card
         document.getElementById("card").classList.add("fade-out");
 
-        // delay redirect (smooth transition)
         setTimeout(()=>{
             window.location.href="home.html";
-        },1200);
+        },1000);
 
     }else{
         alert("Login gagal");
