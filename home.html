@@ -136,6 +136,26 @@ font-weight:600;
 cursor:pointer;
 }
 
+.logout-btn{
+padding:12px 24px;
+border:none;
+border-radius:999px;
+background:rgba(239,68,68,.12);
+border:1px solid rgba(239,68,68,.25);
+color:#dc2626;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+backdrop-filter:blur(10px);
+}
+
+.logout-btn:hover{
+background:linear-gradient(135deg,#ef4444,#dc2626);
+color:white;
+transform:translateY(-3px);
+box-shadow:0 15px 35px rgba(239,68,68,.25);
+}
+
 /* HERO */
 
 .hero{
@@ -396,7 +416,19 @@ Hubungi Kami
 </button>
 
 <button class="logout-btn" onclick="logout()">
-Logout
+⏻ Logout
+</button>
+
+</div>
+<a href="#informasi">Informasi</a>
+<a href="#pic">Kontak PIC</a>
+
+<button class="contact-btn">
+Hubungi Kami
+</button>
+
+<button class="logout-btn" onclick="logout()">
+⏻ Logout
 </button>
 
 </div>
@@ -596,5 +628,14 @@ Kontak PIC
 © 2026 HR Service Plant • Made with 💙💚
 </footer>
 
+<script>
+function logout(){
+if(confirm("Yakin ingin logout?")){
+localStorage.removeItem("isLoggedIn");
+window.location.href="index.html";
+}
+}
+</script>
+  
 </body>
 </html>
