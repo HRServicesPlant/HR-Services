@@ -1,359 +1,138 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section id="pic">
 
-<title>HR Service Plant</title>
+<div class="section-title">
+<h2>PIC Pelayanan HR Service</h2>
+<p>Hubungi PIC sesuai kebutuhan Anda</p>
+</div>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<div class="pic-grid">
 
-<style>
+<!-- FARRAS -->
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+<div class="pic-card">
+<div class="avatar">F</div>
 
-body{
-    background:#f4f8fb;
-}
+<h3>Farras Septianto</h3>
+<p><strong>(Farras)</strong></p>
 
-/* SIDEBAR */
+<p>✉ farras.septianto@paracorpgroup.com</p>
 
-.sidebar{
-    position:fixed;
-    left:0;
-    top:0;
-    width:270px;
-    height:100vh;
-    background:white;
-    border-right:1px solid #e5e7eb;
-    padding:25px;
-    z-index:100;
-}
-
-.logo{
-    font-size:24px;
-    font-weight:700;
-    color:#2563eb;
-    margin-bottom:40px;
-}
-
-.menu{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
-
-.menu a{
-    text-decoration:none;
-    color:#374151;
-    padding:15px 18px;
-    border-radius:14px;
-    transition:.3s;
-    font-weight:500;
-}
-
-.menu a:hover,
-.menu a.active{
-    background:linear-gradient(135deg,#2563eb,#10b981);
-    color:white;
-}
-
-/* CONTENT */
-
-.main{
-    margin-left:270px;
-    padding:30px;
-}
-
-.topbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:25px;
-}
-
-.title{
-    font-size:30px;
-    font-weight:700;
-}
-
-.logout{
-    background:#ef4444;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:12px;
-    cursor:pointer;
-    font-weight:600;
-}
-
-/* HERO */
-
-.hero{
-    background:linear-gradient(
-    135deg,
-    #2563eb,
-    #0ea5e9,
-    #10b981
-    );
-    color:white;
-    padding:45px;
-    border-radius:28px;
-    margin-bottom:25px;
-    box-shadow:0 15px 40px rgba(37,99,235,.25);
-}
-
-.hero h1{
-    font-size:42px;
-    margin-bottom:10px;
-}
-
-.hero p{
-    opacity:.95;
-}
-
-/* SEARCH */
-
-.search-box{
-    background:white;
-    border-radius:18px;
-    padding:18px 22px;
-    margin-bottom:30px;
-    box-shadow:0 8px 20px rgba(0,0,0,.05);
-}
-
-.search-box input{
-    width:100%;
-    border:none;
-    outline:none;
-    font-size:15px;
-}
-
-/* CARD GRID */
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:white;
-    border-radius:25px;
-    padding:25px;
-    text-align:center;
-    transition:.35s;
-    box-shadow:0 10px 25px rgba(0,0,0,.05);
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
-}
-
-.avatar{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#2563eb,#10b981);
-    margin:auto;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    font-size:40px;
-    font-weight:700;
-    margin-bottom:18px;
-}
-
-.name{
-    font-size:22px;
-    font-weight:700;
-}
-
-.position{
-    color:#6b7280;
-    margin-bottom:20px;
-}
-
-.service{
-    display:block;
-    width:100%;
-    text-decoration:none;
-    background:#eff6ff;
-    color:#2563eb;
-    padding:12px;
-    margin-bottom:10px;
-    border-radius:12px;
-    transition:.3s;
-    font-size:14px;
-}
-
-.service:hover{
-    background:linear-gradient(135deg,#2563eb,#10b981);
-    color:white;
-}
-
-/* FOOTER */
-
-.footer{
-    margin-top:40px;
-    text-align:center;
-    color:#94a3b8;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-.sidebar{
-    width:100%;
-    height:auto;
-    position:relative;
-}
-
-.main{
-    margin-left:0;
-}
-
-.hero h1{
-    font-size:30px;
-}
-
-}
-
-</style>
-</head>
-<body>
-
-<!-- SIDEBAR -->
-
-<div class="sidebar">
-
-    <div class="logo">
-        HR Services Plant
-    </div>
-
-    <div class="menu">
-        <a href="#" class="active">🏠 Dashboard</a>
-        <a href="#">🪪 ID Card</a>
-        <a href="#">🏥 BPJS</a>
-        <a href="#">📄 Surat Keterangan Kerja</a>
-        <a href="#">👔 Seragam</a>
-        <a href="#">🌴 Cuti</a>
-    </div>
+<ul>
+<li>Pemberkasan HL</li>
+<li>Surat Keterangan Kerja (SKK)</li>
+<li>Benefit (Pernikahan, Kehamilan, Melahirkan, Keguguran, Dukacita, Beasiswa Anak, Kacamata)</li>
+<li>ID Card & Akses Lock</li>
+<li>Pelaporan Kecelakaan Kerja</li>
+</ul>
 
 </div>
 
-<!-- MAIN -->
+<!-- SUCI -->
 
-<div class="main">
+<div class="pic-card">
+<div class="avatar">S</div>
 
-    <div class="topbar">
-        <div class="title">HR Service Portal</div>
-        <button class="logout">Logout</button>
-    </div>
+<h3>Suci Rosita</h3>
+<p><strong>(Ita)</strong></p>
 
-    <div class="hero">
-        <h1>Selamat Datang 👋</h1>
-        <p>
-            Portal layanan HR untuk informasi PIC, administrasi karyawan,
-            BPJS, cuti, benefit, dan kebutuhan lainnya.
-        </p>
-    </div>
+<p>📞 0878-1727-7739</p>
+<p>✉ suci.rosita@paracorpgroup.com</p>
 
-    <div class="search-box">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Cari PIC atau layanan HR..."
-            onkeyup="searchPIC()"
-        >
-    </div>
-
-    <div class="grid" id="cardContainer">
-
-        <div class="card">
-            <div class="avatar">F</div>
-            <div class="name">Farras Septianto</div>
-            <div class="position">HR Services</div>
-
-            <a class="service" href="#">Pemberkasan HL</a>
-            <a class="service" href="#">SKK</a>
-            <a class="service" href="#">Benefit</a>
-            <a class="service" href="#">ID Card & Access Lock</a>
-            <a class="service" href="#">Pelaporan Kecelakaan Kerja</a>
-        </div>
-
-        <div class="card">
-            <div class="avatar">S</div>
-            <div class="name">Suci Rosita</div>
-            <div class="position">HR Services</div>
-
-            <a class="service" href="#">Slip Gaji</a>
-            <a class="service" href="#">Cuti</a>
-            <a class="service" href="#">Presensi</a>
-        </div>
-
-        <div class="card">
-            <div class="avatar">U</div>
-            <div class="name">Umu Kulsum</div>
-            <div class="position">HR Services</div>
-
-            <a class="service" href="#">BPJS</a>
-            <a class="service" href="#">Seragam</a>
-            <a class="service" href="#">Medical</a>
-        </div>
-
-        <div class="card">
-            <div class="avatar">U</div>
-            <div class="name">Uul Maria Ulfah</div>
-            <div class="position">HR Services</div>
-
-            <a class="service" href="#">PKWT</a>
-            <a class="service" href="#">Database</a>
-            <a class="service" href="#">Paklaring</a>
-        </div>
-
-    </div>
-
-    <div class="footer">
-        © 2026 HR Service Plant
-    </div>
+<ul>
+<li>BPJS Ketenagakerjaan</li>
+<li>Mengelola Gaji HL, PKWT & Tetap</li>
+<li>Slip Gaji</li>
+<li>Konfirmasi Presensi</li>
+<li>Konfirmasi Cuti</li>
+</ul>
 
 </div>
 
-<script>
+<!-- UMU -->
 
-function searchPIC() {
+<div class="pic-card">
+<div class="avatar">U</div>
 
-    let input =
-    document.getElementById("searchInput")
-    .value.toLowerCase();
+<h3>Umu Kulsum</h3>
+<p><strong>(Umu)</strong></p>
 
-    let cards =
-    document.querySelectorAll(".card");
+<p>📞 0878-1727-7574</p>
+<p>✉ umu.kulsum@paracorpgroup.com</p>
 
-    cards.forEach(card => {
+<ul>
+<li>Admedika Nasional</li>
+<li>BPJS Kesehatan</li>
+<li>Tagihan MCU</li>
+<li>Rekap Surat Cuti, SKD & SPL</li>
+<li>Seragam Korporat</li>
+</ul>
 
-        let text =
-        card.innerText.toLowerCase();
+</div>
 
-        card.style.display =
-        text.includes(input)
-        ? "block"
-        : "none";
+<!-- UUL -->
 
-    });
+<div class="pic-card">
+<div class="avatar">U</div>
 
+<h3>Uul Maria Ulfah</h3>
+<p><strong>(Uul)</strong></p>
+
+<p>📞 0813-8247-1151</p>
+<p>✉ uul.mulfah@paracorpgroup.com</p>
+
+<ul>
+<li>Database</li>
+<li>Pemberkasan PKWT</li>
+<li>Paklaring</li>
+</ul>
+
+</div>
+
+<!-- YUNI -->
+
+<div class="pic-card">
+<div class="avatar">Y</div>
+
+<h3>Yuni Sarah</h3>
+<p><strong>(Yuni)</strong></p>
+
+<p>✉ yuni.sarah@paracorpgroup.com</p>
+
+<ul>
+<li>Mengelola PMBT</li>
+<li>Mengelola Gaji Tukang dan PKL</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+.pic-card{
+background:white;
+padding:30px;
+border-radius:24px;
+box-shadow:0 15px 40px rgba(37,99,235,.08);
+transition:.3s;
+border:1px solid rgba(37,99,235,.08);
 }
 
-</script>
+.pic-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 50px rgba(16,185,129,.15);
+}
 
-</body>
-</html>
+.pic-card p{
+margin-bottom:10px;
+font-size:14px;
+}
+
+.pic-card ul{
+margin-top:15px;
+line-height:1.7;
+}
+
+.pic-card strong{
+color:#10b981;
+}
