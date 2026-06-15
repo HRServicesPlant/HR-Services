@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Asuransi - HR Service Plant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--blue:#2563eb;
+--green:#10b981;
+--dark:#111827;
+--gray:#6b7280;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+min-height:100vh;
+background:linear-gradient(
+135deg,
+#eff6ff 0%,
+#ecfeff 35%,
+#f0fdf4 70%,
+#ecfdf5 100%
+);
+overflow-x:hidden;
+}
+
+/* Blur Background */
+
+.blur1{
+position:fixed;
+top:-100px;
+right:-100px;
+width:400px;
+height:400px;
+background:#10b981;
+opacity:.25;
+filter:blur(120px);
+z-index:-1;
+}
+
+.blur2{
+position:fixed;
+bottom:-100px;
+left:-100px;
+width:450px;
+height:450px;
+background:#2563eb;
+opacity:.2;
+filter:blur(130px);
+z-index:-1;
+}
+
+/* Navbar */
+
+nav{
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.7);
+backdrop-filter:blur(20px);
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:22px;
+font-weight:800;
+color:#111827;
+}
+
+.back-btn{
+text-decoration:none;
+padding:12px 20px;
+border-radius:999px;
+background:white;
+border:1px solid #e5e7eb;
+color:#111827;
+font-weight:600;
+transition:.3s;
+}
+
+.back-btn:hover{
+transform:translateY(-2px);
+}
+
+/* Hero */
+
+.hero{
+padding:80px 8% 50px;
+text-align:center;
+}
+
+.hero h1{
+font-size:56px;
+font-weight:800;
+color:#111827;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+color:#6b7280;
+}
+
+/* Container */
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+/* Accordion */
+
+.accordion{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.accordion-item{
+background:rgba(255,255,255,.75);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.5);
+border-radius:28px;
+overflow:hidden;
+box-shadow:
+0 10px 30px rgba(0,0,0,.05);
+transition:.3s;
+}
+
+.accordion-item:hover{
+transform:translateY(-4px);
+}
+
+.accordion-header{
+width:100%;
+padding:24px 28px;
+border:none;
+background:none;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:22px;
+font-weight:700;
+color:#111827;
+}
+
+.icon{
+width:55px;
+height:55px;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(
+135deg,
+#2563eb,
+#10b981
+);
+font-size:24px;
+color:white;
+margin-right:15px;
+}
+
+.header-left{
+display:flex;
+align-items:center;
+}
+
+.arrow{
+transition:.3s;
+font-size:22px;
+}
+
+.active .arrow{
+transform:rotate(180deg);
+}
+
+.accordion-content{
+max-height:0;
+overflow:hidden;
+transition:max-height .4s ease;
+}
+
+.content-inner{
+padding:0 28px 28px;
+color:#4b5563;
+line-height:1.8;
+}
+
+/* Card isi */
+
+.info-box{
+background:white;
+padding:20px;
+border-radius:20px;
+margin-top:10px;
+border:1px solid #e5e7eb;
+}
+
+.info-box h3{
+margin-bottom:10px;
+color:#111827;
+}
+
+.info-box ul{
+padding-left:20px;
+}
+
+.info-box li{
+margin-bottom:8px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+.accordion-header{
+font-size:18px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="blur1"></div>
+<div class="blur2"></div>
+
+<nav>
+<div class="logo">🏥 Asuransi</div>
+
+<a href="index.html" class="back-btn">
+← Kembali
+</a>
+</nav>
+
+<section class="hero">
+<h1>Informasi Asuransi</h1>
+<p>
+Pilih kategori asuransi yang ingin Anda lihat.
+</p>
+</section>
+
+<div class="container">
+
+<div class="accordion">
+
+<!-- BPJS Kesehatan -->
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+
+<div class="header-left">
+<div class="icon">❤️</div>
+BPJS Kesehatan
+</div>
+
+<div class="arrow">⌄</div>
+
+</button>
+
+<div class="accordion-content">
+<div class="content-inner">
+
+<div class="info-box">
+<h3>Informasi BPJS Kesehatan</h3>
+
+<ul>
+<li>Daftar Anggota Keluarga Inti (Pasangan dan Anak ke 1-3)</li>
+<li>Daftar Anggota Keluarga Tambahan (Anak ke-4 dst/Orangtua)</li>
+<li>Daftar Bayi Baru Lahir</li>
+<li>Revisi Identitas / Nama Bayi</li>
+<li>Mobile JKN</li>
+<li>Pindah Faskes</li>
+<li>Cek Nomor Kartu BPJS Kes</li>
+<li>Download Kartu BPJS Kes</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- BPJS TK -->
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+
+<div class="header-left">
+<div class="icon">🛡️</div>
+BPJS Ketenagakerjaan
+</div>
+
+<div class="arrow">⌄</div>
+
+</button>
+
+<div class="accordion-content">
+<div class="content-inner">
+
+<div class="info-box">
+<h3>Informasi BPJS Ketenagakerjaan</h3>
+
+<ul>
+<li>BPJSTKU</li>
+<li>Cek Nomor Kartu BPJSTK</li>
+<li>Download Kartu</li>
+<li>Waktu Pencairan JHT</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- Admedika -->
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+
+<div class="header-left">
+<div class="icon">💊</div>
+Admedika
+</div>
+
+<div class="arrow">⌄</div>
+
+</button>
+
+<div class="accordion-content">
+<div class="content-inner">
+
+<div class="info-box">
+<h3>Informasi Admedika</h3>
+
+<ul>
+<li>Pengecualian Polis</li>
+<li>Pengajuan Klaim Reimbursement</li>
+<li>Pengajuan Klaim Melahirkan</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const items = document.querySelectorAll(".accordion-item");
+
+items.forEach(item => {
+
+const btn = item.querySelector(".accordion-header");
+
+btn.addEventListener("click", () => {
+
+item.classList.toggle("active");
+
+const content = item.querySelector(".accordion-content");
+
+if(content.style.maxHeight){
+content.style.maxHeight = null;
+}
+else{
+content.style.maxHeight =
+content.scrollHeight + "px";
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
