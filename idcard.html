@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ID Card Plant - HR Service Plant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--blue:#2563eb;
+--green:#10b981;
+--dark:#111827;
+--gray:#6b7280;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:linear-gradient(
+135deg,
+#eff6ff 0%,
+#ecfeff 35%,
+#f0fdf4 70%,
+#ecfdf5 100%
+);
+background-size:400% 400%;
+animation:bgMove 15s ease infinite;
+color:var(--dark);
+overflow-x:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.blur1{
+position:fixed;
+top:-100px;
+right:-100px;
+width:450px;
+height:450px;
+background:#10b981;
+opacity:.20;
+filter:blur(120px);
+z-index:-1;
+}
+
+.blur2{
+position:fixed;
+bottom:-100px;
+left:-100px;
+width:450px;
+height:450px;
+background:#2563eb;
+opacity:.15;
+filter:blur(120px);
+z-index:-1;
+}
+
+nav{
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.8);
+backdrop-filter:blur(15px);
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.logo{
+font-size:22px;
+font-weight:800;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-circle{
+width:35px;
+height:35px;
+border-radius:50%;
+background:linear-gradient(135deg,#2563eb,#10b981);
+}
+
+.back-btn{
+text-decoration:none;
+padding:12px 22px;
+border-radius:999px;
+background:white;
+color:#2563eb;
+font-weight:600;
+border:1px solid #dbeafe;
+}
+
+.hero{
+padding:80px 8% 40px;
+text-align:center;
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+background:#dbeafe;
+color:#2563eb;
+border-radius:999px;
+font-size:14px;
+font-weight:600;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:60px;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.hero h1 span{
+display:block;
+background:linear-gradient(90deg,#2563eb,#10b981);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+max-width:800px;
+margin:auto;
+color:#6b7280;
+line-height:1.8;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px 8% 80px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+margin-bottom:25px;
+}
+
+.card h2{
+margin-bottom:20px;
+color:#2563eb;
+}
+
+.card ul{
+padding-left:22px;
+}
+
+.card li{
+margin-bottom:12px;
+line-height:1.8;
+color:#374151;
+}
+
+.pic-card{
+background:white;
+padding:35px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+text-align:center;
+margin-bottom:25px;
+}
+
+.avatar{
+width:90px;
+height:90px;
+border-radius:24px;
+background:linear-gradient(135deg,#2563eb,#10b981);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:36px;
+font-weight:700;
+margin:0 auto 20px;
+}
+
+.email{
+display:inline-block;
+padding:10px 14px;
+background:#eff6ff;
+border-radius:12px;
+color:#2563eb;
+font-weight:600;
+margin-top:10px;
+}
+
+.link-btn{
+display:inline-block;
+padding:16px 28px;
+background:linear-gradient(135deg,#2563eb,#10b981);
+color:white;
+text-decoration:none;
+border-radius:999px;
+font-weight:700;
+margin-top:15px;
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:white;
+border-top:1px solid #e5e7eb;
+color:#6b7280;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.card{
+padding:25px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="blur1"></div>
+<div class="blur2"></div>
+
+<nav>
+<div class="logo">
+<div class="logo-circle"></div>
+HR Service Plant
+</div>
+
+<a href="home.html" class="back-btn">
+← Kembali
+</a>
+</nav>
+
+<section class="hero">
+
+<div class="badge">
+ID Card Plant
+</div>
+
+<h1>
+Informasi
+<span>ID Card Plant</span>
+</h1>
+
+<p>
+Ketentuan penggunaan ID Card, pengajuan ID Card baru, penggantian kartu hilang/rusak, serta permintaan akses pintu masuk.
+</p>
+
+</section>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Ketentuan ID Card</h2>
+
+<ul>
+<li>ID Card wajib digunakan setiap hari di area kerja. Apabila tidak menggunakan ID Card, personel tidak diperkenankan masuk ke area kerja.</li>
+
+<li>Operator/Operasional akan dibuatkan ID Card apabila masa kerjanya sudah 6 bulan (proses pembuatan kurang lebih 1 bulan).</li>
+
+<li>Officer Up akan mendapatkan ID Card akses pada saat pertama masuk kerja.</li>
+
+<li>ID Card dapat digunakan sebagai tanda pengenal, access lock, dan e-money.</li>
+
+<li>ID Card tidak diperkenankan untuk dipinjamkan ke personel lain.</li>
+
+<li>Personel tidak diperkenankan untuk mencetak ID Card sendiri.</li>
+
+<li>Bagi personel yang habis kontrak, harap dipastikan untuk mengosongkan e-money saat pengembalian inventaris perusahaan.</li>
+
+<li>Apabila ID Card hilang atau rusak, personel wajib menginfokan ke PIC ID Card paling lambat 1x24 jam dengan melampirkan berita acara kehilangan/kerusakan.</li>
+
+<li>Apabila ID Card rusak, personel dapat mengajukan ID Card baru dan wajib membawa ID Card yang rusak.</li>
+
+<li>Apabila ID Card hilang, personel akan dikenakan biaya pembuatan ID Card baru (tidak berlaku untuk HL).</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Biaya Penggantian ID Card Hilang</h2>
+
+<ul>
+<li>Nominal kartu E-Money : Rp 60.000</li>
+<li>Nominal tali lanyard : Rp 40.000</li>
+<li>Nominal kartu + tali : Rp 100.000</li>
+<li>Biaya dibayarkan melalui pemotongan gaji sesuai cut off presensi.</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Pengajuan ID Card Hilang / Rusak</h2>
+
+<p style="margin-bottom:20px;">
+Paragonian dapat mengisi pengajuan melalui link berikut:
+</p>
+
+<a href="https://bit.ly/Idcardpabrik" target="_blank" class="link-btn">
+Ajukan ID Card
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>Permintaan Akses Pintu Masuk</h2>
+
+<ul>
+<li>Jika perorangan, personel dapat submit melalui link pengajuan ID Card.</li>
+
+<li>Jika per departemen, Admin/Leader/Superior mengirim email ke Farras Septianto dengan melampirkan:
+<ul style="margin-top:10px;">
+<li>NIP</li>
+<li>Nama</li>
+<li>Departemen</li>
+<li>Pintu yang dituju</li>
+</ul>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="pic-card">
+
+<div class="avatar">F</div>
+
+<h3>Farras Septianto</h3>
+
+<div class="email">
+📧 farras.septianto@paracorpgroup.com
+</div>
+
+<p style="margin-top:10px;">
+📱 0882-1359-6811
+</p>
+
+<p style="margin-top:10px;">
+<b>PIC ID Card Plant</b>
+</p>
+
+</div>
+
+<footer>
+© 2026 HR Service Plant • Made with 💙💚
+</footer>
+
+</body>
+</html>
