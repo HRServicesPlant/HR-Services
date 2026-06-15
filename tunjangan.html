@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tunjangan & Klaim - HR Service Plant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--blue:#2563eb;
+--green:#10b981;
+--dark:#111827;
+--gray:#6b7280;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:linear-gradient(
+135deg,
+#eff6ff 0%,
+#ecfeff 35%,
+#f0fdf4 70%,
+#ecfdf5 100%
+);
+background-size:400% 400%;
+animation:bgMove 15s ease infinite;
+color:var(--dark);
+overflow-x:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.blur1{
+position:fixed;
+top:-100px;
+right:-100px;
+width:450px;
+height:450px;
+background:#10b981;
+opacity:.20;
+filter:blur(120px);
+z-index:-1;
+}
+
+.blur2{
+position:fixed;
+bottom:-100px;
+left:-100px;
+width:450px;
+height:450px;
+background:#2563eb;
+opacity:.15;
+filter:blur(120px);
+z-index:-1;
+}
+
+nav{
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.8);
+backdrop-filter:blur(15px);
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.logo{
+font-size:22px;
+font-weight:800;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-circle{
+width:35px;
+height:35px;
+border-radius:50%;
+background:linear-gradient(135deg,#2563eb,#10b981);
+}
+
+.back-btn{
+text-decoration:none;
+padding:12px 22px;
+border-radius:999px;
+background:white;
+color:#2563eb;
+font-weight:600;
+border:1px solid #dbeafe;
+}
+
+.hero{
+padding:80px 8% 40px;
+text-align:center;
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+background:#dbeafe;
+color:#2563eb;
+border-radius:999px;
+font-size:14px;
+font-weight:600;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:60px;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.hero h1 span{
+display:block;
+background:linear-gradient(90deg,#2563eb,#10b981);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+color:#6b7280;
+line-height:1.8;
+}
+
+.info-grid{
+padding:40px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.info-card{
+background:white;
+padding:30px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+transition:.3s;
+}
+
+.info-card:hover{
+transform:translateY(-8px);
+}
+
+.icon{
+width:60px;
+height:60px;
+border-radius:18px;
+background:linear-gradient(135deg,#2563eb,#10b981);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+color:white;
+margin-bottom:20px;
+}
+
+.info-card h3{
+margin-bottom:10px;
+}
+
+.info-card p{
+color:#6b7280;
+line-height:1.7;
+}
+
+.claim-box{
+text-align:center;
+padding:0 8% 60px;
+}
+
+.claim-btn{
+display:inline-block;
+padding:16px 32px;
+border-radius:999px;
+background:linear-gradient(135deg,#2563eb,#10b981);
+color:white;
+text-decoration:none;
+font-weight:700;
+margin-top:20px;
+}
+
+.pic-section{
+padding:0 8% 100px;
+display:flex;
+justify-content:center;
+}
+
+.pic-card{
+background:white;
+padding:35px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+max-width:450px;
+width:100%;
+text-align:center;
+}
+
+.avatar{
+width:90px;
+height:90px;
+border-radius:24px;
+background:linear-gradient(135deg,#2563eb,#10b981);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:36px;
+font-weight:700;
+margin:0 auto 20px;
+}
+
+.email{
+display:inline-block;
+padding:8px 12px;
+background:#eff6ff;
+border:1px solid #bfdbfe;
+border-radius:12px;
+color:#2563eb;
+font-size:13px;
+font-weight:600;
+margin-top:10px;
+margin-bottom:15px;
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:white;
+color:#6b7280;
+border-top:1px solid #e5e7eb;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="blur1"></div>
+<div class="blur2"></div>
+
+<nav>
+<div class="logo">
+<div class="logo-circle"></div>
+HR Service Plant
+</div>
+
+<a href="home.html" class="back-btn">
+← Kembali
+</a>
+</nav>
+
+<section class="hero">
+
+<div class="badge">
+Benefit Karyawan
+</div>
+
+<h1>
+Tunjangan & Klaim
+<span>Paragon Plant</span>
+</h1>
+
+<p>
+Informasi berbagai tunjangan dan benefit yang dapat diajukan oleh karyawan Paragon Plant.
+</p>
+
+</section>
+
+<div class="info-grid">
+
+<div class="info-card">
+<div class="icon">👶</div>
+<h3>Tunjangan Melahirkan / Keguguran</h3>
+<p>Benefit bagi karyawan yang melahirkan atau mengalami keguguran sesuai ketentuan perusahaan.</p>
+</div>
+
+<div class="info-card">
+<div class="icon">💍</div>
+<h3>Tunjangan Pernikahan</h3>
+<p>Benefit yang diberikan kepada karyawan yang melangsungkan pernikahan.</p>
+</div>
+
+<div class="info-card">
+<div class="icon">🌹</div>
+<h3>Pengajuan Karangan Bunga</h3>
+<p>Pengajuan karangan bunga sesuai kebijakan dan kebutuhan perusahaan.</p>
+</div>
+
+<div class="info-card">
+<div class="icon">🕊️</div>
+<h3>Tunjangan Santunan Duka Cita</h3>
+<p>Santunan yang diberikan kepada karyawan yang mengalami musibah kedukaan.</p>
+</div>
+
+<div class="info-card">
+<div class="icon">🤰</div>
+<h3>Tunjangan Periksa Kehamilan</h3>
+<p>Benefit biaya pemeriksaan kehamilan sesuai ketentuan yang berlaku.</p>
+</div>
+
+<div class="info-card">
+<div class="icon">🎓</div>
+<h3>Tunjangan Beasiswa</h3>
+<p>Program bantuan pendidikan bagi anak karyawan yang memenuhi persyaratan.</p>
+</div>
+
+<div class="info-card">
+<div class="icon">👓</div>
+<h3>Klaim Kacamata</h3>
+<p>Fasilitas klaim pembelian kacamata sesuai kebijakan perusahaan.</p>
+</div>
+
+</div>
+
+<div class="claim-box">
+
+<h2>Link Pengajuan Klaim Tunjangan</h2>
+
+<a href="#" class="claim-btn">
+Klik Disini
+</a>
+
+</div>
+
+<div class="pic-section">
+
+<div class="pic-card">
+
+<div class="avatar">F</div>
+
+<h3>Farras Septianto</h3>
+
+<div class="email">
+📧 farras.septianto@paracorpgroup.com
+</div>
+
+<p>
+<b>PIC TUNJANGAN & KACAMATA</b>
+</p>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 HR Service Plant • Made with 💙💚
+</footer>
+
+</body>
+</html>
+```
