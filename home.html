@@ -333,14 +333,22 @@ transform:translateY(-10px);
 }
 
 .avatar{
-width:80px;
-height:80px;
-border-radius:24px;
-background:linear-gradient(135deg,var(--blue),var(--green));
+    width:80px;
+    height:80px;
+    border-radius:24px;
+    background:linear-gradient(135deg,var(--blue),var(--green));
 
-display:flex;
-align-items:center;
-justify-content:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+    transition:transform 0.2s ease;
+}
+
+.avatar:hover{
+    transform:scale(1.1);
+}
 
 margin:0 auto 20px auto;
 
