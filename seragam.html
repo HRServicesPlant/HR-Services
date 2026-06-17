@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Seragam - HR Service Plant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--blue:#2563eb;
+--green:#10b981;
+--dark:#111827;
+--gray:#6b7280;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:linear-gradient(
+135deg,
+#eff6ff 0%,
+#ecfeff 35%,
+#f0fdf4 70%,
+#ecfdf5 100%
+);
+background-size:400% 400%;
+animation:bgMove 15s ease infinite;
+color:var(--dark);
+overflow-x:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* NAV */
+nav{
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.8);
+backdrop-filter:blur(15px);
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:800;
+font-size:22px;
+}
+
+.logo-circle{
+width:35px;
+height:35px;
+border-radius:50%;
+background:linear-gradient(135deg,var(--blue),var(--green));
+}
+
+.back-btn{
+padding:12px 22px;
+border-radius:999px;
+text-decoration:none;
+background:white;
+border:1px solid #dbeafe;
+color:var(--blue);
+font-weight:600;
+}
+
+/* HERO */
+.hero{
+padding:80px 8% 40px;
+text-align:center;
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+background:#dbeafe;
+color:var(--blue);
+border-radius:999px;
+font-size:14px;
+font-weight:600;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:60px;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.hero h1 span{
+display:block;
+background:linear-gradient(90deg,var(--blue),var(--green));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+max-width:800px;
+margin:auto;
+color:var(--gray);
+line-height:1.8;
+}
+
+/* CONTENT */
+.container{
+padding:40px 8% 80px;
+display:grid;
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.card h2{
+color:var(--blue);
+margin-bottom:15px;
+}
+
+.card ul{
+padding-left:20px;
+}
+
+.card li{
+margin-bottom:10px;
+line-height:1.7;
+color:#374151;
+}
+
+/* PIC */
+.pic-card{
+background:white;
+padding:35px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+text-align:center;
+max-width:450px;
+margin:0 auto 80px;
+}
+
+.avatar{
+width:90px;
+height:90px;
+border-radius:50%;
+overflow:hidden;
+margin:0 auto 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,var(--blue),var(--green));
+}
+
+.avatar img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+.email{
+display:inline-block;
+padding:8px 12px;
+background:#eff6ff;
+border:1px solid #bfdbfe;
+border-radius:12px;
+color:var(--blue);
+font-size:13px;
+font-weight:600;
+margin:10px 0 15px;
+}
+
+/* FOOTER */
+footer{
+padding:30px;
+text-align:center;
+background:white;
+border-top:1px solid #e5e7eb;
+color:var(--gray);
+}
+
+@media(max-width:768px){
+.hero h1{font-size:40px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">
+<div class="logo-circle"></div>
+HR Service Plant
+</div>
+
+<a href="home.html" class="back-btn">← Kembali</a>
+</nav>
+
+<section class="hero">
+<div class="badge">Informasi Seragam</div>
+
+<h1>Seragam<br><span>Korporat</span></h1>
+
+<p>
+Ketentuan penggunaan seragam, pembagian seragam, serta FAQ terkait seragam korporat Plant.
+</p>
+</section>
+
+<div class="container">
+
+<div class="card">
+<h2>Ketentuan Seragam</h2>
+<ul>
+<li>Operator/Operasional mendapatkan seragam setelah masa kerja 6 bulan.</li>
+<li>Officer Up mendapatkan seragam 1 minggu setelah masuk kerja.</li>
+<li>Seragam wajib digunakan setiap hari (kecuali RND & PID Jumat bebas).</li>
+<li>Seragam tidak boleh dimodifikasi (dipotong/dikecilkan).</li>
+<li>Seragam tidak boleh dipinjamkan ke orang lain.</li>
+<li>Hanya boleh menggunakan seragam resmi perusahaan.</li>
+<li>Pembaruan seragam setiap 2 tahun sekali (mulai 2022).</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>QnA</h2>
+<ul>
+<li><b>Q:</b> Jika seragam 2025, kapan update berikutnya?<br>
+<b>A:</b> Ikut pembaruan berikutnya tahun 2028.</li>
+
+<li><b>Q:</b> Jika pindah dari HO ke Plant?</li>
+<li><b>A:</b> HR Plant akan menambahkan kekurangan seragam sesuai ketentuan.</li>
+
+<li><b>Q:</b> Berapa pcs seragam?</li>
+<li><b>A:</b> 3 pasang untuk personil baru, kecuali RnD & PID 2 pasang.</li>
+</ul>
+</div>
+
+</div>
+
+<div class="pic-card">
+
+<div class="avatar">
+<img src="img/umu.png" alt="Umu Kulsum">
+</div>
+
+<h3>Umu Kulsum</h3>
+
+<div class="email">
+umu.kulsum@paracorpgroup.com
+</div>
+
+<p><b>PIC SERAGAM PLANT</b></p>
+<p>0878-1727-7574</p>
+
+</div>
+
+<footer>
+© 2026 HR Service Plant • Made with 💙💚
+</footer>
+
+</body>
+</html>
