@@ -92,17 +92,19 @@ body{
 
 /* LOGO */
 .logo{
-    width:80px;
+    width:300px;
     height:80px;
     margin:auto;
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:22px;
-    background:linear-gradient(135deg,#2563eb,#10b981);
-    color:white;
-    font-size:28px;
     margin-bottom:18px;
+}
+
+.logo img{
+    max-width:220px;
+    max-height:70px;
+    object-fit:contain;
 }
 
 /* TEXT */
@@ -221,6 +223,10 @@ h1{
 
 <div class="card" id="card">
 
+    <div class="logo">
+        <img src="paragoncorp.png" alt="Paragoncorp">
+    </div>
+    
     <div class="logo">
         <i class="fa-solid fa-user-lock"></i>
     </div>
