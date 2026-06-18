@@ -575,11 +575,40 @@ let box=document.getElementById("detailBPJS");
 
 box.style.display="block";
 
-
 if(type==="inti"){
 
 box.innerHTML=`
+...
+`;
+}
 
+else if(type==="tambahan"){
+
+box.innerHTML=`
+...
+`;
+}
+
+else if(type==="bayi"){
+
+box.innerHTML=`
+...
+`;
+}
+
+else if(type==="revisi"){
+
+box.innerHTML=`
+...
+`;
+}
+
+// TAMBAHKAN INI
+const content = box.closest(".accordion-content");
+content.style.maxHeight = content.scrollHeight + "px";
+
+}
+  
 <h3>Syarat Daftar Anggota Keluarga</h3>
 
 <ul>
