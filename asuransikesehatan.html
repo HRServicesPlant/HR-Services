@@ -192,9 +192,25 @@ transform:rotate(180deg);
 }
 
 .accordion-content{
-  max-height:0;
-  overflow:hidden;
-  transition:max-height 0.4s ease;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+}
+
+.accordion-item.active .accordion-content{
+    max-height:650px;
+    overflow-y:auto;
+    padding-right:8px;
+}
+
+/* Scrollbar */
+.accordion-content::-webkit-scrollbar{
+    width:8px;
+}
+
+.accordion-content::-webkit-scrollbar-thumb{
+    background:#cbd5e1;
+    border-radius:10px;
 }
 
 .content-inner{
@@ -308,6 +324,36 @@ font-size:18px;
 }
 }
 
+.bpjs-item{
+    margin-bottom:12px;
+}
+
+.bpjs-btn{
+    width:100%;
+    padding:18px 22px;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+    background:#fff;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:16px;
+    font-weight:600;
+    text-align:left;
+}
+
+.bpjs-content{
+    display:none;
+    padding:20px;
+    border:1px solid #e5e7eb;
+    border-top:none;
+    border-radius:0 0 16px 16px;
+    background:#fafafa;
+}
+
+</style>
+
 </style>
 </head>
 <body>
@@ -361,42 +407,222 @@ perlindungan kesehatan bagi peserta dan keluarganya. Layanan ini mencakup
 pendaftaran peserta, perubahan data, fasilitas kesehatan, hingga informasi kartu BPJS.
 </p>
   
+<div class="bpjs-menu">
+
+    <div class="bpjs-item">
+        <button class="bpjs-btn">
+            Daftar Anggota Keluarga Inti (Pasangan dan Anak ke 1-3)
+            <span>▼</span>
+        </button>
+        <div class="bpjs-content">
+            <ul>
+		<li>Anggota keluarga yang bisa di daftarkan adalah pasangan dan maksimal 3 orang anak</li>
+		<li>Pasangan dan anak sudah terdaftar di KK</li>
+		<li>Siapkan KK dan kartu BPJS Kesehatan (jika ada)</li>
+		<li>isi link berikut:</li>
+	   </ul>
+		<a
+		  href="https://docs.google.com/forms/d/e/1FAIpQLSdmKcwhKoent2jLMKjOVqt_cUHGdOu1hx9ZrngO0luF_iKKfA/viewform"
+		  target="_blank"
+		  class="btn-form"
+		>
+		📝 Isi Form Pendaftaran
+		</a>
+        </div>
+    </div>
+
+    <div class="bpjs-item">
+        <button class="bpjs-btn">
+            Daftar Anggota Keluarga Tambahan (Anak ke-4 dst/Orangtua)
+            <span>▼</span>
+        </button>
+        <div class="bpjs-content">
+	<h3>Syarat Daftar Anggota Keluarga Tambahan</h3>
+
+<ul>
+<li>Status Paragonian (PKWT/TETAP)</li>
+<li>Anak ke 4, ke 5 dst menambah potongan gaji 1% per orang</li>
+<li>Siapkan foto KTP, KK, dan kartu BPJS Kesehatan</li>
+<li>Cetak dan isi surat pernyataan penambahan anggota keluarga lalu setelah itu di scan dan dijadikan PDF berikut:</li>
+
+
+		<a
+		  href="https://drive.google.com/file/d/1P_90K8fK0gw8OIJfdh5J7NqXcvHkkQKB/view"
+		  target="_blank"
+		  class="btn-form"
+		>
+		📝 Surat Pernyataan Potongan 1%
+		</a>
+		<li>isi link berikut:</li>
+	   	<a
+		  href="https://docs.google.com/forms/d/e/1FAIpQLSdmKcwhKoent2jLMKjOVqt_cUHGdOu1hx9ZrngO0luF_iKKfA/viewform"
+		  target="_blank"
+		  class="btn-form"
+		>
+		📝 Isi Form Pendaftaran
+		</a>
+	   </ul>
+
+    </div>
+    </div>
+
+    <div class="bpjs-item">
+        <button class="bpjs-btn">
+            Daftar Bayi Baru Lahir
+            <span>▼</span>
+        </button>
+        <div class="bpjs-content">
+            <h3>Cara Mendaftarkan Bayi Baru Lahir</h3>
+
+		<ul>
+		   <li>Anak yang bisa di daftarkan sampai anak ketiga</li>
+		   <li>Siapkan berkas berikut : asli & fotocopy kartu BPJS Kesehatan Ibu Kandung, asli & fotocopy surat keterangan lahir dari RS/Bidan/Klinik, asli & fotocopy kartu keluarga orangtua</li>
+	           <li>Datang ke kantor BPJS Kesehatan terdekat untuk proses pendaftaran (Maksimal 3 hari kerja setelah anak lahir)</li>
+		   <li>Setelah proses pendaftaran selesai, anda akan mendapatkan kartu seperti berikut</li>
+		<div class="image-box">
+			<h3>Kartu Identitas Peserta</h3>
+			<img src="img/kartuidentitaspeserta.png" alt="">
+		</div>
+	           <li>Anda akan menerima kartu dengan identias nama by nyonya A Untuk mengubahnya menjadi nama sesuai nama anak anda yang tertera di KK</li>
+		</ul>
+		<a
+		  href="https://docs.google.com/forms/d/e/1FAIpQLSdmKcwhKoent2jLMKjOVqt_cUHGdOu1hx9ZrngO0luF_iKKfA/viewform"
+		  target="_blank"
+		  class="btn-form"
+		>
+		📝 isi link berikut:		
+		</a>
+
+        </div>
+    </div>
+
+    <div class="bpjs-item">
+        <button class="bpjs-btn">
+            Revisi Identitas / Nama Bayi
+            <span>▼</span>
+        </button>
+        <div class="bpjs-content">
+            <h3>Cara Revisi Identitas yang tidak sesuai / Nama Bayi:</h3>
+
+		<ul>
+		  <li>Pastikan anak anda/anggota keluarga yang ingin direvisi sudah masuk KK</li>
+	 	  <li>Pastikan KK anda sudah update/sinkronisasi ke data disdukcapil</li>
+		</ul>
+		<a
+		  href="https://docs.google.com/forms/d/e/1FAIpQLSdmKcwhKoent2jLMKjOVqt_cUHGdOu1hx9ZrngO0luF_iKKfA/viewform"
+		  target="_blank"
+		  class="btn-form"
+		>
+		📝 isi link berikut:		
+		</a>
+        </div>
+    </div>
+
+    <div class="bpjs-item">
+        <button class="bpjs-btn">
+            Mobile JKN
+            <span>▼</span>
+        </button>
+        <div class="bpjs-content">
+            <h3>Mobile JKN</h3>
+
+<p style="margin-bottom:15px;">
+Mobile JKN adalah layanan untuk peserta yang berisi informasi data peserta dan keluarga,
+informasi pendaftaran dan perubahan data peserta, cek tagihan dan pembayaran iuran,
+serta sarana untuk menyampaikan pengaduan dan permintaan informasi.
+</p>
+
+<div class="info-box">
+
+<h3>Cara Download Aplikasi Mobile JKN</h3>
+
+<p>
+Buka Play Store kemudian ketik <b>Mobile JKN</b> pada kolom pencarian.
+Pilih aplikasi Mobile JKN lalu klik Install hingga proses selesai.
+</p>
+
+</div>
+
+<div class="info-box" style="margin-top:15px;">
+
+<h3>Panduan Registrasi Mobile JKN</h3>
+
+<ol style="padding-left:20px;">
+
+<li>Buka aplikasi Mobile JKN.</li>
+<li>Pilih menu Registrasi.</li>
+<li>Masukkan data yang diminta.</li>
+
+</ol>
+
+</div>
+
+<div class="info-box" style="margin-top:15px;">
+
+<h3>Keterangan Data Registrasi</h3>
+
 <ul>
 
-<li onclick="showDetail('inti')" class="click-item">
-Daftar Anggota Keluarga Inti (Pasangan dan Anak ke 1-3)
-</li>
-
-<li onclick="showDetail('tambahan')" class="click-item">
-Daftar Anggota Keluarga Tambahan (Anak ke-4 dst/Orangtua)
-</li>
-
-<li onclick="showDetail('bayi')" class="click-item">
-Daftar Bayi Baru Lahir
-</li>
-
-<li onclick="showDetail('revisi')" class="click-item">
-Revisi Identitas / Nama Bayi
-</li>
-
-<li onclick="showDetail('mobile')" class="click-item">
-Mobile JKN
-</li>
-
-<li onclick="showDetail('faskes')" class="click-item">
-Pindah Faskes
-</li>
-
-<li onclick="showDetail('nomor')" class="click-item">
-Cek Nomor Kartu BPJS Kes
-</li>
-
-<li onclick="showDetail('download')" class="click-item">
-Download Kartu BPJS Kes
-</li>
+<li><b>No Kartu BPJS</b> : Nomor yang terdapat pada kartu BPJS.</li>
+<li><b>No KTP / NIK</b> : Sesuai KTP atau kartu BPJS.</li>
+<li><b>Tanggal Lahir</b> : Sesuai data peserta.</li>
+<li><b>Nama Ibu Kandung</b> : Sesuai data peserta.</li>
+<li><b>Password</b> : Buat password yang mudah diingat.</li>
+<li><b>Konfirmasi Password</b> : Isi password yang sama.</li>
+<li><b>No HP</b> : Nomor HP aktif.</li>
+<li><b>Email</b> : Email aktif untuk verifikasi.</li>
 
 </ul>
 
+</div>
+        </div>
+    </div>
+
+    <div class="bpjs-item">
+        <button class="bpjs-btn">
+            Pindah Faskes
+            <span>▼</span>
+        </button>
+        <div class="bpjs-content">
+            <h3>Cara pindah faskes via aplikasi Mobile JKN</h3>   
+	    <ul>
+		<li>Pertama. Buka aplikasi Mobile JKN. Kita akan mendapatkan halaman muka seperti gambar di bawah ini. Di halaman awal, kita bisa melihat beberapa menu utama, diantaranya menu tentang kepesertaan, tagihan, layanan serta menu informasi yang bersifat umum. Untuk layanan pemindahan faskes kita masuk ke bagian menu ubah data peserta pada tabel kanan atas.
+		</li>
+		<li>Kedua. Masuk ke bagian ubah data peserta. Kita akan menemukan beberapa informasi tentang keanggotaan kita sebagai pengguna layanan BPJS kesehatan. Diantaranya : No Kartu BPJS kesehatan. Nama layanan faskes 1 sebagai layanan pertama serta kelas perawatan. Untuk memindahkan faskes BPJS kesehatan, kita klik bagian informasi faskes. Sebagai contoh di informasi keanggotaan saya sebelumnya berada di klinik intan. Kita akan merubahnya ke faskes lainnya.</li>
+		<li>Ketiga. Muncul informasi ” Ubah Fasilitas Kesehatan Pertama ”. Kita masukkan Propinsi yang kita tuju. Selanjutnya masukkan nama Kota / Kabupaten. Lalu masukkan klinik pratama yang kita tuju. Setelah kita memilih nama klinik pratama yang kita tuju, maka langkah selanjutnya adalah kita diwajibkan menyimpan data kita dengan mensubmit data tersebut ke sistem. Saat proses penyimpanan data, sekali lagi, sistem akan mengirimkan kode verifikasi ke email anda </li>
+		<li>Buka email anda, dan anda akan mendapatkan email seperti di sebelah kiri. Dari email yang dikirimkan, kita bisa mengecek kembali, apakah data yang kita masukkan sudah sepenuhnya benar atau belum. Dari gambar disamping, data-data yang saya masukkan sudah benar. Saya ingin merubah faskes pertama saya yang sebelumnya di Klinik intan menjadi klinik Realino Yogyakarta. Setelah memastikan semuanya benar, maka langkah terakhir adalah memasukkan No Verifikasi Perubahan Data di aplikasi mobile JKN yang sedang kita buka</li>
+		<li>Apabila sudah berhasil, maka anda akan mendapat pemberitahuan seperti gambar yang tertera di sebelah kiri : Sampai dengan tahap ini, berarti anda sudah berhasil memindahkan faskes BPJS kesehatan lama anda ke faskes yang baru sesuai dengan pilihan anda. Untuk bisa menggunakannya, terhitung tanggal 1 bulan berikutnya, layanan faskes tingkat pertama baru bisa digunakan. </li>
+		
+	    </ul>
+        </div>
+    </div>
+
+    <div class="bpjs-item">
+        <button class="bpjs-btn">
+            Cek Nomor Kartu BPJS Kesehatan
+            <span>▼</span>
+        </button>
+        <div class="bpjs-content">
+	    <h3>Untuk cek nomor kartu BPJS anda dapat melihat di slip gaji masing-masing yang dikirimkan melalui email setiap bulannya.</h3>
+	    <li>Apabil nomor bpjs kesehatan tidak terdapat pada slip gaji maka bisa bertanya / menghubungi Umu Kulsum melalui email berikut : umu.kulsum@paracorpgroup.com</li>
+        </div>
+    </div>
+
+    <div class="bpjs-item">
+        <button class="bpjs-btn">
+            Download Kartu BPJS Kes
+            <span>▼</span>
+        </button>
+        <div class="bpjs-content">
+            	<li>Login ke aplikasi Mobile JKN</li>
+		<li>Di dalam aplikasi mobile jkn, pilih gambar icon dengan tulisan peserta di bagian atas kiri, kemudian tekan tombol Kartu Peserta</li>
+		<li>Maka akan terbuka tampilan seperti gambar di samping</li>
+		<li>Selanjutnya, di bawah sebelah kanan, pilih nama peserta yang ingin kartunya dicetak, kemudian tekan tombol bergambar amplop di sebelah kiri bawah. Tunggu prosesnya, Aplikasi mobile JKN akan mengirimkan gambar cetak kartu dalam format PDF ke email yang anda daftarkan di aplikasi tersebut.</li>
+		<li>Silahkan periksa email yang anda daftarkan. Masuk ke email yang anda daftarkan, lalu periksa pesan yang dikirim oleh BPJS yang berisi kartu BPJS yang siap dicetak. Silahkan download file kartu bpjs yang dikirim, lalu silahkan anda cetak.</li>
+        </div>
+    </div>
+
+</div>
 
 <div id="detailBPJS" class="info-box" style="display:none;"></div>
 
@@ -840,10 +1066,11 @@ box.innerHTML=`
 <h3>Cara Mendaftarkan Bayi Baru Lahir</h3>
 
 <ul>
-<li>Siapkan kartu BPJS ibu kandung</li>
-<li>Surat keterangan lahir RS/Bidan/Klinik</li>
-<li>KK orang tua</li>
-<li>Datang ke kantor BPJS maksimal 3 hari kerja setelah lahir</li>
+<li>Anak yang bisa di daftarkan sampai anak ketiga</li>
+<li>Siapkan berkas berikut : asli & fotocopy kartu BPJS Kesehatan Ibu Kandung, asli & fotocopy surat keterangan lahir dari RS/Bidan/Klinik, asli & fotocopy kartu keluarga orangtua</li>
+<li>Datang ke kantor BPJS Kesehatan terdekat untuk proses pendaftaran (Maksimal 3 hari kerja setelah anak lahir)</li>
+<li>Setelah proses pendaftaran selesai, anda akan mendapatkan kartu seperti berikut</li>
+<li>Anda akan menerima kartu dengan identias nama by nyonya A Untuk mengubahnya menjadi nama sesuai nama anak anda yang tertera di KK, silahkan isi link berikut ini:</li>
 </ul>
 
 `;
@@ -1283,6 +1510,30 @@ document.querySelectorAll(".sub-header").forEach(button => {
 
     });
 
+});
+
+</script>
+
+<script>
+
+/* javascript lama */
+
+document.querySelectorAll(".bpjs-btn").forEach(btn => {
+    btn.addEventListener("click", function(){
+
+        const content = this.nextElementSibling;
+
+        document.querySelectorAll(".bpjs-content").forEach(item => {
+            if(item !== content){
+                item.style.display = "none";
+            }
+        });
+
+        content.style.display =
+            content.style.display === "block"
+            ? "none"
+            : "block";
+    });
 });
 
 </script>
