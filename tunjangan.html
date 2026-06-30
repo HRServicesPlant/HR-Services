@@ -481,6 +481,50 @@ color:#555;
     transform:translateY(0);
 }
 
+.faq{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-top:25px;
+}
+
+.faq-item{
+    background:#fff;
+    border-radius:18px;
+    padding:22px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.question{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-size:17px;
+    color:#111827;
+    margin-bottom:14px;
+}
+
+.question span{
+    font-size:22px;
+}
+
+.answer{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    padding:15px;
+    background:#f8fafc;
+    border-left:5px solid #10b981;
+    border-radius:12px;
+    line-height:1.8;
+    color:#374151;
+}
+
+.answer span{
+    font-size:20px;
+}
+
 footer{
 padding:30px;
 text-align:center;
@@ -1174,39 +1218,71 @@ style="margin-left:12px;background:linear-gradient(135deg,#10b981,#059669);">
 
 <h3>❓ Tanya Jawab (Q&A)</h3>
 
-<div class="faq-item">
-<strong>Q.</strong> Saya PKWT masuk <b>2 Juni 2025</b>, apakah bisa klaim kacamata?<br>
-<strong>A.</strong> Ya, bisa klaim kacamata.
-</div>
+<div class="faq">
 
-<div class="faq-item">
-<strong>Q.</strong> Saya PKWT masuk <b>9 Juni 2025</b>, apakah bisa klaim kacamata?<br>
-<strong>A.</strong> Tidak bisa klaim kacamata.
-</div>
+    <div class="faq-item">
+        <div class="question">
+            <span>❓</span>
+            <strong>Saya PKWT masuk 2 Juni 2025, apakah bisa klaim kacamata?</strong>
+        </div>
 
-<div class="faq-item">
-<strong>Q.</strong> Saya PKWT <b>Rehire</b> masuk kembali tanggal <b>2 Juni 2025</b>, apakah bisa klaim?<br>
-<strong>A.</strong> Ya, bisa klaim kacamata.
-</div>
+        <div class="answer">
+            <span>✅</span>
+            Ya, bisa klaim kacamata.
+        </div>
+    </div>
 
-<div class="faq-item">
-<strong>Q.</strong> Saya PKWT <b>Rehire</b> masuk kembali tanggal <b>9 Juni 2025</b>, apakah bisa klaim?<br>
-<strong>A.</strong> Tidak bisa klaim kacamata.
-</div>
+    <div class="faq-item">
+        <div class="question">
+            <span>❓</span>
+            <strong>Saya PKWT masuk 9 Juni 2025, apakah bisa klaim kacamata?</strong>
+        </div>
 
-<div class="faq-item">
-<strong>Q.</strong> Saya membeli kacamata terakhir pada <b>2 Juni 2025</b>. Kapan saya bisa klaim kembali?<br>
-<strong>A.</strong>
-Klaim <b>lensa</b> dapat diajukan mulai <b>2 Juni 2026</b>, sedangkan klaim
-<b>kacamata lengkap</b> dapat diajukan mulai <b>2 Juni 2027</b>.
-Apabila diajukan sebelum tanggal tersebut, maka klaim tidak dapat diproses.
-</div>
+        <div class="answer">
+            <span>❌</span>
+            Tidak bisa klaim kacamata.
+        </div>
+    </div>
 
-<div class="note">
-<strong>📢 Informasi</strong><br>
-Progres klaim kacamata dapat ditanyakan kepada leader atau admin departemen masing-masing.
-</div>
+    <div class="faq-item">
+        <div class="question">
+            <span>❓</span>
+            <strong>Saya PKWT Rehire masuk kembali tanggal 2 Juni 2025, apakah bisa klaim?</strong>
+        </div>
 
+        <div class="answer">
+            <span>✅</span>
+            Ya, bisa klaim kacamata.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            <span>❓</span>
+            <strong>Saya PKWT Rehire masuk kembali tanggal 9 Juni 2025, apakah bisa klaim?</strong>
+        </div>
+
+        <div class="answer">
+            <span>❌</span>
+            Tidak bisa klaim kacamata.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">
+            <span>❓</span>
+            <strong>Saya membeli kacamata terakhir pada 2 Juni 2025. Kapan saya bisa klaim lagi?</strong>
+        </div>
+
+        <div class="answer">
+            <span>📅</span>
+            Klaim <b>lensa</b> dapat dilakukan mulai <b>2 Juni 2026</b>, sedangkan klaim
+            <b>kacamata lengkap</b> mulai <b>2 Juni 2027</b>. Jika diajukan sebelum tanggal
+            tersebut, maka klaim tidak dapat diproses.
+        </div>
+    </div>
+
+</div>
 <hr>
 
 <h3>📞 Informasi Lebih Lanjut</h3>
