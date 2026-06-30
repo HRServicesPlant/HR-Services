@@ -215,23 +215,17 @@ text-align:center;
 }
 
 .avatar{
-    width:90px;
-    height:90px;
-    border-radius:50%;
-    overflow:hidden;
-    margin:0 auto 20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(135deg,#2563eb,#10b981);
-}
-
-/* gambar */
-.avatar img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+width:90px;
+height:90px;
+border-radius:24px;
+background:linear-gradient(135deg,#2563eb,#10b981);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:36px;
+font-weight:700;
+margin:0 auto 20px;
 }
 
 .email{
@@ -245,6 +239,246 @@ font-size:13px;
 font-weight:600;
 margin-top:10px;
 margin-bottom:15px;
+}
+
+.info-card{
+cursor:pointer;
+}
+
+.accordion-content{
+max-height:0;
+overflow:hidden;
+transition:.4s;
+margin-top:0;
+text-align:left;
+border-top:1px solid transparent;
+}
+
+.accordion-content.active{
+max-height:2500px;
+margin-top:25px;
+padding-top:20px;
+border-top:1px solid #e5e7eb;
+}
+
+.accordion-content h3{
+margin-bottom:15px;
+color:#2563eb;
+}
+
+.accordion-content h4{
+margin-top:20px;
+margin-bottom:10px;
+color:#111827;
+}
+
+.accordion-content p{
+margin-bottom:12px;
+line-height:1.8;
+}
+
+.accordion-content ul,
+.accordion-content ol{
+padding-left:22px;
+margin-bottom:18px;
+}
+
+.accordion-content li{
+margin-bottom:10px;
+line-height:1.8;
+}
+
+.note{
+background:#eff6ff;
+border-left:4px solid #2563eb;
+padding:15px;
+border-radius:12px;
+margin-top:20px;
+}
+
+.detail-box{
+width:84%;
+margin:0 auto 60px;
+background:#fff;
+border-radius:24px;
+padding:35px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+display:none;
+animation:fade .3s;
+}
+
+.detail-box.show{
+display:block;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.detail-box h2{
+margin-bottom:20px;
+color:#2563eb;
+}
+
+.detail-box h3{
+margin:25px 0 10px;
+}
+
+.detail-box p,
+.detail-box li{
+line-height:1.8;
+color:#555;
+}
+
+.detail-box ul,
+.detail-box ol{
+padding-left:22px;
+margin:15px 0;
+}
+
+.accordion{
+width:84%;
+margin:40px auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.accordion-item{
+background:white;
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.accordion-header{
+width:100%;
+border:none;
+background:white;
+padding:24px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+font-size:24px;
+font-weight:700;
+}
+
+.left{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.arrow{
+transition:.3s;
+}
+
+.accordion-item.active .arrow{
+transform:rotate(180deg);
+}
+
+.accordion-content{
+max-height:0;
+overflow:hidden;
+transition:max-height .4s ease;
+padding:0 30px;
+}
+
+.accordion-item.active .accordion-content{
+max-height:10000px;
+padding:0 30px 30px;
+}
+
+.accordion-content h3{
+margin-top:10px;
+margin-bottom:15px;
+color:#2563eb;
+}
+
+.accordion-content p,
+.accordion-content li{
+line-height:1.8;
+color:#555;
+}
+
+.accordion-content h2{
+    color:#2563eb;
+    margin-bottom:20px;
+}
+
+.accordion-content h3{
+    margin-top:25px;
+    margin-bottom:12px;
+    color:#111827;
+}
+
+.accordion-content h4{
+    margin-top:20px;
+    margin-bottom:10px;
+    color:#2563eb;
+}
+
+.accordion-content p{
+    line-height:1.8;
+    color:#555;
+    margin-bottom:15px;
+}
+
+.accordion-content ul,
+.accordion-content ol{
+    margin:15px 0 20px 22px;
+}
+
+.accordion-content li{
+    margin-bottom:10px;
+    line-height:1.8;
+}
+
+.accordion-content hr{
+    border:none;
+    border-top:1px solid #e5e7eb;
+    margin:25px 0;
+}
+
+.note{
+    background:#eff6ff;
+    border-left:5px solid #2563eb;
+    padding:18px;
+    border-radius:12px;
+    margin-top:25px;
+}
+
+.form-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:25px;
+    padding:14px 28px;
+    background:linear-gradient(135deg,#2563eb,#10b981);
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    font-size:16px;
+    border-radius:999px;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+}
+
+.form-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(37,99,235,.35);
+}
+
+.form-btn:active{
+    transform:translateY(0);
 }
 
 footer{
@@ -298,69 +532,718 @@ Informasi berbagai tunjangan dan benefit yang dapat diajukan oleh karyawan Parag
 
 </section>
 
-<div class="info-grid">
+<div class="accordion">
 
-<div class="info-card">
-<div class="icon">👶</div>
-<h3>Tunjangan Melahirkan / Keguguran</h3>
-<p>Benefit bagi karyawan yang melahirkan atau mengalami keguguran sesuai ketentuan perusahaan.</p>
+    <div class="accordion-item">
+        <button class="accordion-header">
+            <div class="left">
+                <div class="icon">👶</div>
+                <span>Tunjangan Melahirkan / Keguguran</span>
+            </div>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="accordion-content">
+
+            <h3>Tunjangan Melahirkan</h3>
+
+            <p>
+Klaim melahirkan/keguguran untuk personel wanita dan istri personel karyawan tetap
+ditanggung oleh asuransi sehingga tidak dapat diklaim ke Perusahaan.
+</p>
+
+<p>
+Personel dapat langsung menggunakan kartu Asuransi di Rumah Sakit rekanan atau
+mengajukan <b>Reimburse Pengajuan Klaim Reimbursement</b>.
+</p>
+
+<p>
+Petunjuk pengajuan klaim dapat dilihat pada
+<b>Panduan Login MyAdmedika</b>.
+</p>
+
+<hr>
+
+<h3>Pengajuan Klaim Melahirkan Menggunakan BPJS</h3>
+
+<p>
+Untuk istri personel pria PKWT dengan masa kerja lebih dari <b>1 tahun</b>,
+berlaku ketentuan sebagai berikut:
+</p>
+
+<h4>📌 Ketentuan</h4>
+
+<ul>
+    <li>Diberikan kepada istri Personel PKWT dengan syarat minimal masa kerja <b>1 tahun</b> (dimulai dari PKWT 1).</li>
+
+    <li>Dana klaim akan dimasukkan ke gaji Personel.</li>
+
+    <li>Nominal yang dibayarkan mengikuti nominal kuitansi dengan maksimal sesuai plafon.</li>
+
+    <li>Periode cut off rekap pengajuan mengikuti cut off gaji, yaitu setiap tanggal <b>15</b>.</li>
+</ul>
+
+<h4>📄 Berkas Persyaratan</h4>
+
+<ul>
+    <li>Fotokopi Kartu Keluarga (KK) atau Buku Nikah.</li>
+
+    <li>Fotokopi Surat Keterangan Melahirkan/Keguguran yang mencantumkan jenis persalinan (Normal/Caesar).</li>
+
+    <li>Kuitansi asli biaya melahirkan/keguguran apabila tidak menggunakan BPJS Kesehatan (khusus istri Personel PKWT).</li>
+
+    <li>Surat keterangan penggunaan BPJS (SEP/Laporan Mobile JKN) atau surat dari Rumah Sakit yang menyatakan bahwa persalinan ditanggung BPJS Kesehatan.</li>
+</ul>
+
+<h4>📝 Alur Pengajuan</h4>
+
+<ol>
+    <li>Siapkan seluruh berkas persyaratan.</li>
+
+    <li>Scan seluruh berkas dengan jelas.</li>
+
+    <li>Isi Form Pengajuan Klaim Tunjangan.</li>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfViugA6nW2gduSWb3sJIMKjLDzH0OXHXp-FLZqqV2_wBPnXg/viewform"
+   target="_blank"
+   class="form-btn">
+    📝 Ajukan Klaim Tunjangan
+</a>
+
+    <li>Tidak perlu menyerahkan berkas fisik ke HR Operations (Farras Septianto) Plant Jatake 4.</li>
+</ol>
+
+<div class="note">
+<strong>📢 Note</strong><br>
+Apabila hasil scan berkas tidak terbaca atau tidak jelas, maka pengajuan tidak dapat diproses.
 </div>
 
-<div class="info-card">
-<div class="icon">💍</div>
-<h3>Tunjangan Pernikahan</h3>
-<p>Benefit yang diberikan kepada karyawan yang melangsungkan pernikahan.</p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">
+            <div class="left">
+                <div class="icon">💍</div>
+                <span>Tunjangan Pernikahan</span>
+            </div>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="accordion-content">
+            <h2>💍 Tunjangan Pernikahan</h2>
+
+<p>
+Tunjangan Pernikahan diberikan kepada personel yang memenuhi persyaratan sesuai
+ketentuan perusahaan.
+</p>
+
+<hr>
+
+<h3>📌 Ketentuan</h3>
+
+<ul>
+    <li>Diberikan kepada Personel dengan syarat minimal masa kerja <b>1 tahun</b> (dimulai dari PKWT 1).</li>
+
+    <li>Diberikan untuk Personel yang menikah pertama atau kedua (dibuktikan dengan akta cerai atau surat kematian pasangan sebelumnya).</li>
+
+    <li>Diberikan untuk pernikahan anak Personel, maksimal <b>3 anak</b> yang tercantum dalam Kartu Keluarga (KK).</li>
+
+    <li>Dana diberikan sesuai nominal pada kebijakan perusahaan (<i>fixed amount</i>).</li>
+
+    <li>Dana akan dimasukkan ke gaji Personel.</li>
+
+    <li>Apabila sesama Personel menikah, masing-masing Personel berhak mendapatkan hadiah pernikahan.</li>
+</ul>
+
+<h3>📄 Berkas Persyaratan</h3>
+
+<ul>
+    <li>Undangan Pernikahan.</li>
+
+    <li>Formulir Pendaftaran dari KUA.</li>
+</ul>
+
+<h3>📝 Alur Pengajuan</h3>
+
+<ol>
+    <li>Isi Form Pengajuan Klaim Tunjangan.</li>
+
+    <li>Lampirkan Undangan Pernikahan pada Form Tunjangan.</li>
+
+    <li>Lampirkan Formulir Pendaftaran dari KUA pada Form Tunjangan.</li>
+</ol>
+
+<h3>💰 Nominal Tunjangan</h3>
+
+<ul>
+    <li><b>Pernikahan Personel</b> : Rp 1.000.000</li>
+
+    <li><b>Pernikahan Anak Personel</b> (tercantum dalam KK) : Rp 500.000</li>
+</ul>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfViugA6nW2gduSWb3sJIMKjLDzH0OXHXp-FLZqqV2_wBPnXg/viewform"
+   target="_blank"
+   class="form-btn">
+   📝 Ajukan Klaim Tunjangan
+</a>
+
+<div class="note">
+<strong>📢 Catatan</strong><br>
+Pastikan seluruh dokumen persyaratan telah dilampirkan dengan jelas agar pengajuan dapat diproses sesuai ketentuan yang berlaku.
+</div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <button class="accordion-header">
+            <div class="left">
+                <div class="icon">🌹</div>
+                <span>Pengajuan Karangan Bunga</span>
+            </div>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="accordion-content">
+            <h2>🌹 Pengajuan Karangan Bunga</h2>
+
+<p>
+Perusahaan memberikan karangan bunga sebagai bentuk perhatian kepada Personel
+dalam momen suka cita maupun duka cita sesuai dengan ketentuan yang berlaku.
+</p>
+
+<hr>
+
+<h3>🌸 Jenis Karangan Bunga</h3>
+
+<ul>
+    <li>
+        <b>Suka Cita</b>, diberikan apabila Personel atau anak Personel melangsungkan pernikahan.
+    </li>
+
+    <li>
+        <b>Duka Cita</b>, diberikan apabila Personel, suami/istri, anak kandung atau anak angkat (tercantum dalam KK), maupun orang tua kandung atau orang tua angkat (tercantum dalam KK) meninggal dunia.
+    </li>
+</ul>
+
+<div class="note">
+<strong>📢 Ketentuan</strong><br>
+Karangan bunga suka cita maupun duka cita diberikan kepada seluruh Personel tanpa persyaratan minimal masa kerja.
 </div>
 
-<div class="info-card">
-<div class="icon">🌹</div>
-<h3>Pengajuan Karangan Bunga</h3>
-<p>Pengajuan karangan bunga sesuai kebijakan dan kebutuhan perusahaan.</p>
+<h3>📌 Kebijakan</h3>
+
+<p>
+Perusahaan hanya mengirimkan <b>1 (satu) karangan bunga</b> yang mewakili
+ParagonCorp secara keseluruhan. Pada karangan bunga yang dikirimkan akan
+dicantumkan nama <b>ParagonCorp</b> sebagai pengirim.
+</p>
+
+<h3>📝 Alur Pengajuan</h3>
+
+<h4>💍 Suka Cita (Pernikahan)</h4>
+
+<ol>
+    <li>Ajukan Bantuan Dana Hadiah Pernikahan melalui <b>Form Tunjangan</b>.</li>
+
+    <li>Pengajuan harus dilakukan paling lambat <b>H-7</b> sebelum acara pernikahan.</li>
+
+    <li>Apabila pengajuan dilakukan setelah tanggal pernikahan, maka karangan bunga tidak dapat diproses.</li>
+</ol>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfViugA6nW2gduSWb3sJIMKjLDzH0OXHXp-FLZqqV2_wBPnXg/viewform"
+   target="_blank"
+   class="form-btn">
+   📝 Form Pengajuan Tunjangan
+</a>
+
+<h4 style="margin-top:30px;">🕊️ Duka Cita (Meninggal Dunia)</h4>
+
+<ol>
+    <li>Leader atau Superior menginformasikan kabar duka kepada Tim HR Plant.</li>
+
+    <li>HR Plant akan memproses pengiriman karangan bunga sesuai ketentuan perusahaan.</li>
+</ol>
+
+<hr>
+
+<h3>📞 Informasi Lebih Lanjut</h3>
+
+<p>
+<b>Farras Septianto</b><br>
+HR Services Plant
+</p>
+
+<p>
+📧
+<a href="mailto:farras.septianto@paracorpgroup.com">
+farras.septianto@paracorpgroup.com
+</a>
+</p>
+        </div>
+    </div>
+
+<div class="accordion-item">
+        <button class="accordion-header">
+            <div class="left">
+                <div class="icon">🕊️</div>
+                <span>Tunjangan Santunan Duka Cita</span>
+            </div>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="accordion-content">
+            <h2>🕊️ Tunjangan Santunan Duka Cita</h2>
+
+<p>
+Tunjangan Santunan Duka Cita diberikan sebagai bentuk kepedulian perusahaan kepada
+Personel yang mengalami musibah sesuai ketentuan yang berlaku.
+</p>
+
+<hr>
+
+<h3>📌 Ketentuan</h3>
+
+<ul>
+    <li>Diberikan pada kondisi berikut:
+        <ul>
+            <li>Personel meninggal dunia.</li>
+            <li>Istri, suami, anak kandung, atau anak angkat Personel meninggal dunia (tercantum dalam KK).</li>
+            <li>Orang tua kandung atau orang tua angkat Personel meninggal dunia (tercantum dalam KK).</li>
+            <li>Janin yang dikandung Personel meninggal pada usia kehamilan <b>7 bulan atau lebih</b>.</li>
+        </ul>
+    </li>
+
+    <li>Diberikan kepada seluruh Personel tanpa persyaratan minimal masa kerja.</li>
+
+    <li>Nominal santunan diberikan sesuai kebijakan perusahaan (<i>fixed amount</i>).</li>
+
+    <li>Berkas yang diterima HR pada tanggal <b>1–15</b> akan ditransfer pada tanggal <b>25</b> di bulan yang sama.</li>
+
+    <li>Berkas yang diterima HR pada tanggal <b>16–akhir bulan</b> akan ditransfer pada tanggal <b>10</b> di bulan berikutnya.</li>
+</ul>
+
+<h3>📄 Berkas Persyaratan</h3>
+
+<ul>
+    <li>Isi Form Pengajuan Klaim Tunjangan.</li>
+
+    <li>Fotokopi Kartu Keluarga (KK) Personel.</li>
+
+    <li>Fotokopi Surat Keterangan Kematian.</li>
+
+    <li>Menyerahkan berkas fisik kepada <b>HR Services Plant (Farras Septianto)</b> di Plant Jatake 4.</li>
+</ul>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfViugA6nW2gduSWb3sJIMKjLDzH0OXHXp-FLZqqV2_wBPnXg/viewform"
+   target="_blank"
+   class="form-btn">
+   📝 Ajukan Santunan Duka Cita
+</a>
+
+<h3>💰 Nominal Santunan</h3>
+
+<ul>
+    <li><b>Personel meninggal dunia</b> : Rp 2.000.000</li>
+
+    <li><b>Istri/Suami/Anak Kandung atau Anak Angkat</b> (tercantum dalam KK) : Rp 1.000.000</li>
+
+    <li><b>Orang Tua Kandung atau Orang Tua Angkat</b> (tercantum dalam KK) : Rp 1.000.000</li>
+
+    <li><b>Janin yang dikandung Personel</b> (usia kehamilan 7 bulan ke atas) : Rp 500.000</li>
+</ul>
+
+<div class="note">
+<strong>📢 Catatan</strong><br>
+Pastikan seluruh dokumen persyaratan telah lengkap dan berkas fisik diserahkan kepada HR Services Plant agar pengajuan dapat diproses sesuai jadwal transfer yang berlaku.
+</div>
+        </div>
+    </div>
+
+<div class="accordion-item">
+        <button class="accordion-header">
+            <div class="left">
+                <div class="icon">🤰</div>
+                <span>Tunjangan Periksa Kehamilan</span>
+            </div>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="accordion-content">
+            <h2>🤰 Tunjangan Periksa Kehamilan</h2>
+
+<p>
+Klaim periksa kehamilan untuk personel wanita dan istri personel karyawan tetap
+ditanggung oleh asuransi sehingga tidak dapat diklaim ke Perusahaan.
+</p>
+
+<p>
+Personel dapat langsung menggunakan kartu Asuransi di Rumah Sakit rekanan atau
+mengajukan <b>Reimburse Pengajuan Klaim Reimbursement</b>.
+</p>
+
+<p>
+Petunjuk pengajuan klaim dapat dilihat pada
+<b>Panduan Login MyAdmedika</b>.
+</p>
+
+<hr>
+
+<h3>📌 Pengajuan Klaim Periksa Kehamilan</h3>
+
+<p>
+Untuk istri Personel pria PKWT dengan masa kerja lebih dari <b>1 tahun</b>,
+berlaku ketentuan sebagai berikut:
+</p>
+
+<h3>📋 Ketentuan</h3>
+
+<ul>
+    <li>Diberikan kepada istri Personel pria dengan syarat minimal masa kerja <b>1 tahun</b> (dimulai dari PKWT 1).</li>
+
+    <li>Fasilitas kontrol kehamilan diberikan <b>1 kali setiap bulan</b> selama masa kehamilan (maksimal 9 bulan).</li>
+
+    <li>Klaim <b>USG 4D</b> hanya dapat diajukan <b>1 kali</b> selama masa kehamilan.</li>
+
+    <li>Nominal klaim mengikuti nilai kuitansi dengan maksimal sesuai plafon yang berlaku.</li>
+
+    <li>Dana klaim akan dimasukkan ke gaji Personel.</li>
+
+    <li>Periode cut off rekap pengajuan mengikuti cut off gaji, yaitu setiap tanggal <b>15</b>.</li>
+</ul>
+
+<h3>📄 Berkas Persyaratan</h3>
+
+<ul>
+    <li>Fotokopi Kartu Keluarga (KK) atau Buku Nikah Personel.</li>
+
+    <li>Fotokopi Buku Tabungan.</li>
+
+    <li>Kuitansi asli pemeriksaan kehamilan.</li>
+</ul>
+
+<h3>📝 Alur Pengajuan</h3>
+
+<ol>
+    <li>Siapkan seluruh berkas persyaratan.</li>
+
+    <li>Scan seluruh berkas dengan jelas.</li>
+
+    <li>Isi Form Pengajuan Klaim Tunjangan.</li>
+
+    <li>Tidak perlu mengirimkan berkas fisik ke HR Services Plant (Farras Septianto) Plant Jatake 4.</li>
+</ol>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfViugA6nW2gduSWb3sJIMKjLDzH0OXHXp-FLZqqV2_wBPnXg/viewform"
+   target="_blank"
+   class="form-btn">
+   📝 Ajukan Klaim Tunjangan
+</a>
+
+<div class="note">
+<strong>📢 Catatan</strong><br>
+Apabila hasil scan dokumen tidak jelas atau tidak terbaca, maka pengajuan klaim tidak dapat diproses.
+</div>
+        </div>
+    </div>
+
+<div class="accordion-item">
+        <button class="accordion-header">
+            <div class="left">
+                <div class="icon">🎓</div>
+                <span>Tunjangan Beasiswa</span>
+            </div>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="accordion-content">
+            <h2>🎓 Tunjangan Beasiswa</h2>
+
+<p>
+Program Beasiswa diberikan kepada anak Personel yang memenuhi persyaratan sesuai
+ketentuan perusahaan. Program ini terdiri dari Beasiswa Anak TK–SMA dan Beasiswa Anak PTN.
+</p>
+
+<hr>
+
+<h2>🎒 Beasiswa Anak TK–SMA</h2>
+
+<h3>💰 Uang Pangkal</h3>
+
+<h4>📌 Ketentuan</h4>
+
+<ul>
+    <li>Diberikan kepada Personel dengan masa kerja minimal <b>1 tahun</b> (dimulai dari PKWT 1).</li>
+    <li>Klaim sesuai nilai kuitansi dengan maksimal sesuai plafon.</li>
+    <li>Berlaku untuk jenjang <b>TK sampai SMA</b>.</li>
+    <li>Diajukan saat anak memasuki jenjang pendidikan baru (tidak dapat diajukan secara backdated).</li>
+    <li>Dana ditransfer pada <b>akhir bulan September</b>.</li>
+</ul>
+
+<h4>📄 Berkas Persyaratan</h4>
+
+<ul>
+    <li>Fotokopi KTP Personel.</li>
+    <li>Fotokopi KK (mencantumkan nama anak).</li>
+    <li>Fotokopi buku tabungan Bank Mandiri.</li>
+    <li>Surat keterangan sekolah pada jenjang pendidikan baru.</li>
+    <li>Kuitansi asli pembayaran uang pangkal (jika sekolah berbayar).</li>
+    <li>Kuitansi asli pembelian kebutuhan sekolah (jika sekolah gratis).</li>
+    <li>Fotokopi rapor terakhir jenjang sebelumnya.</li>
+</ul>
+
+<h4>💵 Nominal Bantuan</h4>
+
+<ul>
+    <li>TK : <b>Rp1.000.000</b></li>
+    <li>SD : <b>Rp1.250.000</b></li>
+    <li>SMP : <b>Rp2.200.000</b></li>
+    <li>SMA : <b>Rp3.500.000</b></li>
+</ul>
+
+<hr>
+
+<h3>📚 Bantuan SPP</h3>
+
+<h4>📌 Ketentuan</h4>
+
+<ul>
+    <li>Diberikan kepada Personel dengan masa kerja minimal <b>1 tahun</b>.</li>
+    <li>Nominal mengikuti kebijakan perusahaan (<i>fixed amount</i>).</li>
+    <li>Nilai rata-rata <b>> 80</b> mendapat tambahan <b>Rp200.000/semester</b>.</li>
+    <li>Nilai rata-rata <b>> 90</b> mendapat tambahan <b>Rp300.000/semester</b>.</li>
+    <li>Perhitungan berdasarkan nilai pengetahuan.</li>
+    <li>Berlaku untuk jenjang TK–SMA.</li>
+    <li>Diajukan saat semester berjalan (tidak dapat backdated).</li>
+    <li>Dana ditransfer setiap akhir bulan pada bulan ke-3 dan ke-5 setiap semester.</li>
+</ul>
+
+<h4>📄 Berkas Persyaratan</h4>
+
+<ul>
+    <li>Fotokopi KTP Personel.</li>
+    <li>Fotokopi KK (mencantumkan nama anak).</li>
+    <li>Fotokopi buku tabungan Bank Mandiri.</li>
+    <li>Fotokopi rapor semester sebelumnya.</li>
+</ul>
+
+<h4>💵 Nominal Bantuan</h4>
+
+<ul>
+    <li>TK : <b>Rp85.000/bulan</b></li>
+    <li>SD : <b>Rp95.000/bulan</b></li>
+    <li>SMP : <b>Rp125.000/bulan</b></li>
+    <li>SMA : <b>Rp350.000/bulan</b></li>
+</ul>
+
+<h4>📝 Alur Pengajuan</h4>
+
+<ol>
+    <li>Isi Form Pengajuan Klaim Tunjangan.</li>
+    <li>Siapkan seluruh dokumen persyaratan.</li>
+    <li>Serahkan seluruh berkas ke <b>HR Services Plant (Farras Septianto)</b> Plant Jatake 6 Office HR.</li>
+</ol>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfViugA6nW2gduSWb3sJIMKjLDzH0OXHXp-FLZqqV2_wBPnXg/viewform"
+target="_blank"
+class="form-btn">
+📝 Ajukan Klaim Tunjangan
+</a>
+
+<hr>
+
+<h2>🏛️ Beasiswa Anak PTN</h2>
+
+<h3>🎓 Uang Kuliah Tunggal (UKT)</h3>
+
+<h4>📌 Ketentuan</h4>
+
+<ul>
+    <li>Diberikan kepada Personel dengan masa kerja minimal <b>1 tahun</b>.</li>
+    <li>Klaim sesuai nilai kuitansi dengan maksimal sesuai plafon.</li>
+    <li>Berlaku untuk anak yang berkuliah di <b>Perguruan Tinggi Negeri (PTN)</b>.</li>
+    <li>Minimal IPK <b>2,75</b> dari skala 4,00.</li>
+    <li>Diajukan saat semester berjalan (tidak dapat backdated).</li>
+    <li>Dana ditransfer pada <b>akhir bulan Maret</b> dan <b>akhir bulan September</b>.</li>
+</ul>
+
+<h4>📄 Berkas Persyaratan</h4>
+
+<ul>
+    <li>Fotokopi KTP Personel.</li>
+    <li>Fotokopi KK (mencantumkan nama anak).</li>
+    <li>Fotokopi buku tabungan Bank Mandiri.</li>
+    <li>Fotokopi transkrip nilai semester sebelumnya.</li>
+    <li>Kuitansi asli pembayaran UKT.</li>
+</ul>
+
+<h4>💵 Plafon Bantuan</h4>
+
+<p><strong>Rp5.000.000 / Semester</strong></p>
+
+<h4>📝 Alur Pengajuan</h4>
+
+<ol>
+    <li>Isi Form Pengajuan Klaim Tunjangan.</li>
+    <li>Siapkan seluruh dokumen persyaratan.</li>
+    <li>Serahkan seluruh berkas ke <b>HR Services Plant (Farras Septianto)</b> Plant Jatake 6 Office HR.</li>
+</ol>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfViugA6nW2gduSWb3sJIMKjLDzH0OXHXp-FLZqqV2_wBPnXg/viewform"
+target="_blank"
+class="form-btn">
+📝 Ajukan Klaim Tunjangan
+</a>
+
+<div class="note">
+<strong>📢 Catatan</strong><br>
+Pastikan seluruh dokumen persyaratan telah lengkap sebelum mengisi Form Pengajuan Klaim Tunjangan. Berkas fisik wajib diserahkan kepada HR Services Plant sesuai ketentuan yang berlaku.
+</div>
+        </div>
+    </div>
+
+<div class="accordion-item">
+        <button class="accordion-header">
+            <div class="left">
+                <div class="icon">👓</div>
+                <span>Klaim Kacamata</span>
+            </div>
+            <span class="arrow">▼</span>
+        </button>
+
+        <div class="accordion-content">
+            <h2>👓 Klaim Kacamata</h2>
+
+<p>
+Klaim Kacamata merupakan salah satu benefit yang diberikan perusahaan kepada
+Personel berupa pembelian <b>kacamata lengkap (frame dan lensa)</b> setiap
+<b>2 tahun sekali</b> serta penggantian <b>lensa setiap 1 tahun sekali</b>,
+mengacu pada tanggal pembelian terakhir masing-masing Personel.
+</p>
+
+<hr>
+
+<h3>📌 Ketentuan</h3>
+
+<ul>
+    <li>Benefit hanya diberikan kepada <b>Personel PKWT yang bergabung sebelum 8 Juni 2025</b>.</li>
+
+    <li>Nominal klaim mengikuti nilai kuitansi dengan maksimal sesuai plafon.</li>
+
+    <li>Pembelian <b>kacamata lengkap (frame + lensa)</b> mendapatkan penggantian maksimal <b>100% plafon</b>.</li>
+
+    <li>Pembelian <b>lensa saja</b> mendapatkan penggantian maksimal <b>25% plafon</b>.</li>
+
+    <li>Periode cut off pengajuan mengikuti cut off gaji, yaitu setiap tanggal <b>15</b>.</li>
+
+    <li>Dana klaim akan ditransfer melalui gaji Personel.</li>
+</ul>
+
+<hr>
+
+<h3>📝 Alur Klaim Kacamata</h3>
+
+<ol>
+    <li>Datang ke optik dan lakukan pemeriksaan mata.</li>
+
+    <li>Lakukan pembelian kacamata atau lensa.</li>
+
+    <li>Mintalah kuitansi asli pembelian dan hasil pemeriksaan mata (refraksi). Nama pada kuitansi harus sesuai dengan KTP.</li>
+
+    <li>Scan kuitansi asli beserta hasil pemeriksaan mata (refraksi).</li>
+
+    <li>Isi Form Klaim Kacamata.</li>
+
+    <li>Tidak perlu menyerahkan kuitansi asli maupun hasil refraksi ke HR Services Plant.</li>
+</ol>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfViugA6nW2gduSWb3sJIMKjLDzH0OXHXp-FLZqqV2_wBPnXg/viewform"
+target="_blank"
+class="form-btn">
+📝 Ajukan Klaim Kacamata
+</a>
+
+<a href="https://bit.ly/CekHistoryKlaimKacamataPlant"
+target="_blank"
+class="form-btn"
+style="margin-left:12px;background:linear-gradient(135deg,#10b981,#059669);">
+👓 Cek Histori Klaim
+</a>
+
+<hr>
+
+<h3>❓ Tanya Jawab (Q&A)</h3>
+
+<div class="faq-item">
+<strong>Q.</strong> Saya PKWT masuk <b>2 Juni 2025</b>, apakah bisa klaim kacamata?<br>
+<strong>A.</strong> Ya, bisa klaim kacamata.
 </div>
 
-<div class="info-card">
-<div class="icon">🕊️</div>
-<h3>Tunjangan Santunan Duka Cita</h3>
-<p>Santunan yang diberikan kepada karyawan yang mengalami musibah kedukaan.</p>
+<div class="faq-item">
+<strong>Q.</strong> Saya PKWT masuk <b>9 Juni 2025</b>, apakah bisa klaim kacamata?<br>
+<strong>A.</strong> Tidak bisa klaim kacamata.
 </div>
 
-<div class="info-card">
-<div class="icon">🤰</div>
-<h3>Tunjangan Periksa Kehamilan</h3>
-<p>Benefit biaya pemeriksaan kehamilan sesuai ketentuan yang berlaku.</p>
+<div class="faq-item">
+<strong>Q.</strong> Saya PKWT <b>Rehire</b> masuk kembali tanggal <b>2 Juni 2025</b>, apakah bisa klaim?<br>
+<strong>A.</strong> Ya, bisa klaim kacamata.
 </div>
 
-<div class="info-card">
-<div class="icon">🎓</div>
-<h3>Tunjangan Beasiswa</h3>
-<p>Program bantuan pendidikan bagi anak karyawan yang memenuhi persyaratan.</p>
+<div class="faq-item">
+<strong>Q.</strong> Saya PKWT <b>Rehire</b> masuk kembali tanggal <b>9 Juni 2025</b>, apakah bisa klaim?<br>
+<strong>A.</strong> Tidak bisa klaim kacamata.
 </div>
 
-<div class="info-card">
-<div class="icon">👓</div>
-<h3>Klaim Kacamata</h3>
-<p>Fasilitas klaim pembelian kacamata sesuai kebijakan perusahaan.</p>
+<div class="faq-item">
+<strong>Q.</strong> Saya membeli kacamata terakhir pada <b>2 Juni 2025</b>. Kapan saya bisa klaim kembali?<br>
+<strong>A.</strong>
+Klaim <b>lensa</b> dapat diajukan mulai <b>2 Juni 2026</b>, sedangkan klaim
+<b>kacamata lengkap</b> dapat diajukan mulai <b>2 Juni 2027</b>.
+Apabila diajukan sebelum tanggal tersebut, maka klaim tidak dapat diproses.
 </div>
 
+<div class="note">
+<strong>📢 Informasi</strong><br>
+Progres klaim kacamata dapat ditanyakan kepada leader atau admin departemen masing-masing.
+</div>
+
+<hr>
+
+<h3>📞 Informasi Lebih Lanjut</h3>
+
+<p>
+<b>Farras Septianto</b><br>
+HR Services Plant
+</p>
+
+<p>
+📧
+<a href="mailto:farras.septianto@paracorpgroup.com">
+farras.septianto@paracorpgroup.com
+</a>
+</p>
+        </div>
+    </div>
+
+</div>
 </div>
 
 <div class="claim-box">
 
-<h2>Link Pengajuan Klaim Tunjangan</h2>
+    <h2>Link Pengajuan Klaim Tunjangan</h2>
 
-<a href="#" class="claim-btn">
-Klik Disini
-</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfViugA6nW2gduSWb3sJIMKjLDzH0OXHXp-FLZqqV2_wBPnXg/viewform"
+       target="_blank"
+       class="claim-btn">
+        📝 Ajukan Klaim Tunjangan
+    </a>
 
 </div>
-
 <div class="pic-section">
 
 <div class="pic-card">
 
-<div class="avatar">
-    <img src="img/farras.png" alt="Farras Septianto">
-</div>
+<div class="avatar">F</div>
 
 <h3>Farras Septianto</h3>
 
@@ -379,6 +1262,22 @@ Klik Disini
 <footer>
 © 2026 HR Service Plant • Made with 💙💚
 </footer>
+
+<script>
+
+document.querySelectorAll(".accordion-header").forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+const item=btn.parentElement;
+
+item.classList.toggle("active");
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
