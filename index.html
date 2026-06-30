@@ -39,34 +39,57 @@ body{
 }
 
 /* BUBBLE */
+/* AURORA BACKGROUND */
+
 .bg{
-    position:absolute;
+    position:fixed;
     inset:0;
     overflow:hidden;
     z-index:0;
+    pointer-events:none;
 }
 
-.bg span{
+.bg::before,
+.bg::after{
+    content:"";
     position:absolute;
-    bottom:-200px;
+    width:650px;
+    height:650px;
     border-radius:50%;
-    background:rgba(255,255,255,.18);
-    backdrop-filter:blur(6px);
-    box-shadow:0 0 25px rgba(59,130,246,.35);
-    animation:float 18s linear infinite;
+    filter:blur(120px);
+    opacity:.35;
 }
 
-.bg span:nth-child(1){left:10%;width:60px;height:60px;animation-duration:20s;}
-.bg span:nth-child(2){left:25%;width:25px;height:25px;animation-duration:14s;}
-.bg span:nth-child(3){left:40%;width:80px;height:80px;animation-duration:22s;}
-.bg span:nth-child(4){left:60%;width:30px;height:30px;animation-duration:16s;}
-.bg span:nth-child(5){left:75%;width:55px;height:55px;animation-duration:19s;}
-.bg span:nth-child(6){left:90%;width:35px;height:35px;animation-duration:15s;}
+.bg::before{
+    background:#2563eb;
+    top:-180px;
+    left:-180px;
+    animation:auroraBlue 18s ease-in-out infinite alternate;
+}
 
-@keyframes float{
-    0%{transform:translateY(0);opacity:0;}
-    20%{opacity:.6;}
-    100%{transform:translateY(-120vh);opacity:0;}
+.bg::after{
+    background:#10b981;
+    bottom:-180px;
+    right:-180px;
+    animation:auroraGreen 20s ease-in-out infinite alternate;
+}
+
+@keyframes auroraBlue{
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+    100%{
+        transform:translate(180px,120px) scale(1.3);
+    }
+}
+
+@keyframes auroraGreen{
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+    100%{
+        transform:translate(-180px,-120px) scale(1.25);
+    }
 }
 
 /* CARD */
@@ -249,10 +272,7 @@ h1{
 <body>
     
 <!-- BUBBLE -->
-<div class="bg">
-    <span></span><span></span><span></span>
-    <span></span><span></span><span></span>
-</div>
+<div class="bg"></div>
 
 <div class="card" id="card">
     
