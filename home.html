@@ -352,9 +352,10 @@ margin-bottom:10px;
 
 /* PIC */
 
+/* Desktop */
 .pic-grid{
     display:grid;
-    grid-template-columns:repeat(5, 1fr);
+    grid-template-columns:repeat(5,1fr);
     gap:25px;
 }
 
@@ -364,17 +365,29 @@ margin-bottom:10px;
     }
 }
 
+/* HP & Tablet */
 @media (max-width:900px){
-    .pic-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
 
-@media (max-width:600px){
     .pic-grid{
-        grid-template-columns:1fr;
+        display:flex;
+        overflow-x:auto;
+        gap:20px;
+        padding-bottom:15px;
+
+        scroll-snap-type:x mandatory;
+        scroll-behavior:smooth;
+
+        scrollbar-width:none;
     }
-}
+
+    .pic-grid::-webkit-scrollbar{
+        display:none;
+    }
+
+    .pic-card{
+        flex:0 0 320px;
+        scroll-snap-align:center;
+    }
 
 .pic-card{
     background:white;
